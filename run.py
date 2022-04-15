@@ -24,7 +24,6 @@ class Ship
                             raise IndexError("Column is out of range.")
                 else:
                     raise IndexError("Row is out of range.")
-            
             elif orientation == 'vertical':
                 if location['col'] in range(col_size):
                     self.coordinates = []
@@ -105,3 +104,29 @@ def print_board(board_array):
     print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
   print()
 
+'''
+Function to searh for locations based on size and orientation constraints including if statements to remain within range of board 
+'''
+def search_locations(size, orientation):
+    locations = []
+
+    if orientation != 'horizontal' and orientation != 'vertical':
+        raise ValueError("Orientation must have a value of either 'horizontal' or 'vertical'.")
+
+    if orientation == 'horizontal':
+        if size <= col_size:
+            for r in range(row_size):
+                for c in range(col_size - size + 1):
+                    if 1 not in board[r][c:c+size]:
+                        locations.append({'row': r, 'col': c})
+    elif orientation == 'vertical':
+        if size <= row_size:
+            for c in range(col_size):
+                for r in range(row_size - size + 1):
+                    if 1 not in [board[i][c] for i in range(r, r+size)]:
+                        locations.append({'row': r, 'col': c})
+
+    if not locations:
+        return 'None'
+    else:
+        return locations
