@@ -2,9 +2,11 @@ from random import randint
 import os
 
 # Ship Class
+
+
 class Ship:
 
-    ''' 
+    '''
     Function to define size, orientation and location of user's ships
     '''
     def __init__(self, size, orientation, location):
@@ -79,7 +81,7 @@ class Ship:
                 raise RuntimeError("Board display inaccurate")
         return True
 
-#Settings Variables
+# Settings Variables
 row_size = 8 #number of rows
 col_size = 8 #number of columns
 num_ships = 4
@@ -87,12 +89,12 @@ max_ship_size = 5
 min_ship_size = 2
 num_turns = 30
 
-#Create lists
+# Create lists
 ship_list = []
 
 board = [[0] * col_size for x in range(row_size)]
 
-board_display = [[" "] * col_size for x in range(row_size)]
+board_display = [["O"] * col_size for x in range(row_size)]
 
 #All Other Functions
 
