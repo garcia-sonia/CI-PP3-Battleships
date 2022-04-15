@@ -172,3 +172,15 @@ def get_col():
                 print("\nNo way, that was such a wild guess :P")
         except ValueError:
             print("\nPlease enter a valid number")
+
+# Create the ships
+temp = 0
+while temp < num_ships:
+    ship_info = random_location()
+    if ship_info == 'None':
+        continue
+    else:
+        ship_list.append(Ship(ship_info['size'], ship_info['orientation'], ship_info['location']))
+        temp += 1
+del temp
+
