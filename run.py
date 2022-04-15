@@ -24,6 +24,18 @@ class Ship
                             raise IndexError("Column is out of range.")
                 else:
                     raise IndexError("Row is out of range.")
+            
+            elif orientation == 'vertical':
+                if location['col'] in range(col_size):
+                    self.coordinates = []
+                    for index in range(size):
+                        if location['row'] + index in range(row_size):
+                            self.coordinates.append({'row': location['row'] + index, 'col': location['col']})
+                        else:
+                            raise IndexError("Row is out of range.")
+                else:
+                    raise IndexError("Column is out of range.")
+
 
 
 
