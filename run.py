@@ -144,3 +144,18 @@ def random_location():
     else:
         return {'location': locations[randint(0, len(locations) - 1)], 'size': size,\
             'orientation': orientation}
+
+''' 
+Function to facilitate input of row guess and print an error message if out of scope
+'''
+def get_row():
+    while True:
+        try:
+            guess = int(input("Row Guess: "))
+            if guess in range(1, row_size + 1):
+                return guess - 1
+            else:
+                print("\no way, that was a loong shot!")
+        except ValueError:
+            print("\nPlease enter a number")
+
