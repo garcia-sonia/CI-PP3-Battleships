@@ -2,7 +2,8 @@ from random import randint
 import os
 
 # Ship Class
-class Ship
+class Ship:
+
     ''' 
     Function to define size, orientation and location of user's ships
     '''
@@ -56,7 +57,7 @@ class Ship
     '''
     def fillBoard(self):
         for coords in self.coordinates:
-        board[coords['row']][coords['col']] = 1
+            board[coords['row']][coords['col']] = 1
 
     ''' 
     Function to check if the location does contain a ship on the user's board
