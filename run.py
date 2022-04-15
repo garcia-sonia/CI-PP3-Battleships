@@ -17,36 +17,36 @@ class Ship:
         else:
             raise ValueError("Value must be 'horizontal' or 'vertical'.")
 
-            if orientation == 'horizontal':
-                if location['row'] in range(row_size):
-                    self.coordinates = []
-                    for index in range(size):
-                        if location['col'] + index in range(col_size):
-                            self.coordinates.append({'row': location['row'], 'col': location['col'] + index})
-                        else:
-                            raise IndexError("Column is out of range.")
-                else:
-                    raise IndexError("Row is out of range.")
-            elif orientation == 'vertical':
-                if location['col'] in range(col_size):
-                    self.coordinates = []
-                    for index in range(size):
-                        if location['row'] + index in range(row_size):
-                            self.coordinates.append({'row': location['row'] + index, 'col': location['col']})
-                        else:
-                            raise IndexError("Row is out of range.")
-                else:
-                    raise IndexError("Column is out of range.")
-
-            if self.filled():
-                print_board(board)
-                print(" ".join(str(coords) for coords in self.coordinates))
-                raise IndexError("A ship already occupies that space.")
+        if orientation == 'horizontal':
+            if location['row'] in range(row_size):
+                self.coordinates = []
+                for index in range(size):
+                    if location['col'] + index in range(col_size):
+                        self.coordinates.append({'row': location['row'], 'col': location['col'] + index})
+                    else:
+                        raise IndexError("Column is out of range.")
             else:
-                self.fillBoard()
+                raise IndexError("Row is out of range.")
+        elif orientation == 'vertical':
+            if location['col'] in range(col_size):
+                self.coordinates = []
+                for index in range(size):
+                    if location['row'] + index in range(row_size):
+                        self.coordinates.append({'row': location['row'] + index, 'col': location['col']})
+                    else:
+                        raise IndexError("Row is out of range.")
+            else:
+                raise IndexError("Column is out of range.")
+
+        if self.filled():
+            print_board(board)
+            print(" ".join(str(coords) for coords in self.coordinates))
+            raise IndexError("A ship already occupies that space.")
+        else:
+            self.fillBoard()
 
     ''' 
-    Function to chek if a ship already occupies a space on user's board
+    Function to chek if a ship already occupies a space on users board
     '''
     def filled(self):
         for coords in self.coordinates:
@@ -82,8 +82,8 @@ class Ship:
         return True
 
 # Settings Variables
-row_size = 8 #number of rows
-col_size = 8 #number of columns
+row_size = 8 # number of rows
+col_size = 8 # number of columns
 num_ships = 4
 max_ship_size = 5
 min_ship_size = 2
@@ -96,7 +96,7 @@ board = [[0] * col_size for x in range(row_size)]
 
 board_display = [["O"] * col_size for x in range(row_size)]
 
-#All Other Functions
+# All Other Functions
 
 ''' 
 Function to print board
