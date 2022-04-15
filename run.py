@@ -87,4 +87,11 @@ max_ship_size = 5
 min_ship_size = 2
 num_turns = 30
 
+#Create lists
+ship_list = []
+
+board = [[0] * col_size for x in range(row_size)]
+
+board_display = [[" "] * col_size for x in range(row_size)]
+
 
