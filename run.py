@@ -1,2 +1,36 @@
 from random import randint
 import os
+
+# Ship Class
+class Ship
+    ''' 
+    Function to define size, orientation and location of user's ships
+    '''
+    def __init__(self, size, orientation, location):
+        self.size = size
+    
+        if orientation == 'horizontal' or orientation == 'vertical':
+            self.orientation = orientation
+        else:
+            raise ValueError("Value must be 'horizontal' or 'vertical'.")
+
+            if orientation == 'horizontal':
+                if location['row'] in range(row_size):
+                    self.coordinates = []
+                    for index in range(size):
+                        if location['col'] + index in range(col_size):
+                            self.coordinates.append({'row': location['row'], 'col': location['col'] + index})
+                        else:
+                            raise IndexError("Column is out of range.")
+                else:
+                    raise IndexError("Row is out of range.")
+
+
+
+
+
+    def filled(self):
+    def fillBoard(self):
+    def contains(self, location):
+    def destroyed(self):
+
