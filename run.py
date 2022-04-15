@@ -68,5 +68,15 @@ class Ship
                 return True
         return False
 
+    ''' 
+    Function to check if ship destroyed
+    '''
     def destroyed(self):
+        for coords in self.coordinates:
+            if board_display[coords['row']][coords['col']] == 'O':
+                return False
+            elif board_display[coords['row']][coords['col']] == '*':
+                raise RuntimeError("Board display inaccurate")
+        return True
+
 
