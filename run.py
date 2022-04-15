@@ -155,7 +155,20 @@ def get_row():
             if guess in range(1, row_size + 1):
                 return guess - 1
             else:
-                print("\no way, that was a loong shot!")
+                print("\nNo way, that was such a wild guess :P")
         except ValueError:
-            print("\nPlease enter a number")
+            print("\nPlease enter a valid number")
 
+''' 
+Function to facilitate input of column guess and print an error message if out of scope
+'''
+def get_col():
+    while True:
+        try:
+            guess = int(input("Column Guess: "))
+            if guess in range(1, col_size + 1):
+                return guess - 1
+            else:
+                print("\nNo way, that was such a wild guess :P")
+        except ValueError:
+            print("\nPlease enter a valid number")
