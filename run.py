@@ -36,6 +36,12 @@ class Ship
                 else:
                     raise IndexError("Column is out of range.")
 
+            if self.filled():
+                print_board(board)
+                print(" ".join(str(coords) for coords in self.coordinates))
+                raise IndexError("A ship already occupies that space.")
+            else:
+                self.fillBoard()
 
 
 
