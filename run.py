@@ -184,7 +184,7 @@ while temp < num_ships:
         temp += 1
 del temp
 
-# Play Game
+# Play Game (including print number of ships left, print if hit or miss and print if one ship is fully sunk)
 os.system('clear')
 print_board(board_display)
 
@@ -208,18 +208,25 @@ for turn in range(num_turns):
     ship_hit = False
     for ship in ship_list:
         if ship.contains(guess_coords):
-            print("HIT!")
+            print("Hit!")
             ship_hit = True
             board_display[guess_coords['row']][guess_coords['col']] = 'X'
             if ship.destroyed():
-                print("SHIP DESTROYED!")
+                print("You sunk a ship!")
                 ship_list.remove(ship)
             break
     if not ship_hit:
         board_display[guess_coords['row']][guess_coords['col']] = '*'
-        print("YOU MISSED...")
+        print("You missed...")
 
     print_board(board_display)
   
     if not ship_list:
         break
+
+# End Game (including print if users wins when there are no more ships to sink or print if user loses if ships are still left)
+if ship_list:
+    print("Oh no... You lose...")
+else:
+    print("You managed to sink all the ships. Congratulations, you are the winner!")
+
