@@ -59,8 +59,14 @@ class Ship
         for coords in self.coordinates:
         board[coords['row']][coords['col']] = 1
 
-
-
+    ''' 
+    Function to check if the location does contain a ship on the user's board
+    '''
     def contains(self, location):
+        for coords in self.coordinates:
+            if coords == location:
+                return True
+        return False
+
     def destroyed(self):
 
