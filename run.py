@@ -145,8 +145,8 @@ def random_location():
     if locations == 'None':
         return 'None'
     else:
-        return {'location': locations[randint(0, len(locations) - 1)], 'size': size,\
-            'orientation': orientation}
+        return {'location': locations[randint(0, len(locations) - 1)],
+                'size': size, 'orientation': orientation}
 
 ''' 
 Function to facilitate input of row guess and print an error message if out of scope
@@ -231,5 +231,5 @@ for turn in range(num_turns):
 if ship_list:
     print("Oh no... You lose...")
 else:
-    print("You managed to sink all the ships. Congratulations, you are the winner!")
+    print("You managed to sink all the ships! Congratulations, you are the winner!")
 
