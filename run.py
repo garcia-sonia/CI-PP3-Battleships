@@ -130,3 +130,17 @@ def search_locations(size, orientation):
         return 'None'
     else:
         return locations
+
+''' 
+Function to generate a random ship location
+'''
+def random_location():
+    size = randint(min_ship_size, max_ship_size)
+    orientation = 'horizontal' if randint(0, 1) == 0 else 'vertical'
+
+    locations = search_locations(size, orientation)
+    if locations == 'None':
+        return 'None'
+    else:
+        return {'location': locations[randint(0, len(locations) - 1)], 'size': size,\
+            'orientation': orientation}
