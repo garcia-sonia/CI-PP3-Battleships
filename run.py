@@ -43,9 +43,6 @@ class Ship
             else:
                 self.fillBoard()
 
-
-
-
     ''' 
     Function to chek if a ship already occupies a space on user's board
     '''
@@ -55,7 +52,15 @@ class Ship
                 return True
         return False
 
+    ''' 
+    Function to fill a space on user's board
+    '''
     def fillBoard(self):
+        for coords in self.coordinates:
+        board[coords['row']][coords['col']] = 1
+
+
+
     def contains(self, location):
     def destroyed(self):
 
