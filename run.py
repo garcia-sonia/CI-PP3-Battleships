@@ -176,6 +176,25 @@ def get_col():
         except ValueError:
             print("\nPlease enter a valid number")
 
+def ask_user_play():
+"""
+Will ask user if they want to play the game
+"""
+while True:
+    confirmation_response = input("yes or no?\n").lower()
+
+    if confirmation_response == 'yes':
+        start_game()
+        break
+    elif confirmation_response == 'no':
+        end_game()
+        break
+    else:
+        print('')
+        print("You must type either 'yes' or 'no'!")
+        print('')
+
+
 # Create the ships
 temp = 0
 while temp < num_ships:
@@ -189,6 +208,7 @@ del temp
 
 # Play Game (including print number of ships left, print if hit or miss and print if one ship is fully sunk)
 os.system('clear')
+ask_user_play()
 print_board(board_display)
 
 for turn in range(num_turns):
