@@ -1,10 +1,11 @@
 from random import randint
 import os
 
+user_name = input("Welcome to Thirty Shots. What is your name?\n")
+print("")
+print(f"You look like a brave soldier {user_name}")
 
-user_instructions = """You look like a brave soldier. 
-
-This is your mission: 
+user_instructions = """\nThis is your mission: 
 You must defend Oros harbour from our enemy Chatarra.
 Oros is much coveted for the precious golden mineral covering our cliffs.
 Our watchmen have spotted the enemy's fleet fast approaching.
@@ -215,7 +216,7 @@ del temp
 answer = input("Do you accept the mission? (yes/no)\n")
 
 if answer.lower().strip() == "no":
-    print("Too bad, we could have done with a brave soldier")
+    print(f"Too bad {user_name}, we could have done with a brave soldier")
     quit()
 else: 
     os.system('clear')
@@ -260,7 +261,7 @@ else:
 
 # End Game (including print if users wins when there are no more ships to sink or print if user loses if ships are still left)
 if ship_list:
-    print("Oh no...you have failed this time soldier...it looks like Chatarra's troups will steal our gold. You can always press on Run Program to try again")
+    print(f"Oh no...you have failed this time soldier {user_name}...it looks like Chatarra's troups will steal our gold. You can always press on Run Program to try again")
 else:
-    print("Victory! You managed to sink all of the enemy's ships! Mission accomplished soldier, you saved our gold!")
+    print(f"Mission accomplished {user_name}! You managed to sink all of the enemy's ships and you saved our gold!")
 
