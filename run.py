@@ -5,7 +5,7 @@ user_name = input("Welcome to Thirty Shots. What is your name?\n")
 print("")
 print(f"You look like a brave soldier {user_name}")
 
-user_instructions = """\nThis is your mission: 
+user_instructions = """\nThis is your mission:
 You must defend Oros harbour from our enemy Chatarra.
 Oros is much coveted for the precious golden mineral covering our cliffs.
 Our watchmen have spotted the enemy's fleet fast approaching.
@@ -13,7 +13,7 @@ You will have to destroy their 4 ships before they land.
 If you do not succeed, they will steal our gold.
 You only have 30 cannonballs to complete your mission.
 Do not run out of ammunition or Chatarra's troops will make it ashore.
- 
+
 The fate of Oros harbour is in your hands...
 
 One more thing:
@@ -29,13 +29,12 @@ print(user_instructions)
 
 class Ship:
 
-
     def __init__(self, size, orientation, location):
         '''
         Function to define size, orientation and location of user's ships
         '''
         self.size = size
-    
+
         if orientation == 'horizontal' or orientation == 'vertical':
             self.orientation = orientation
         else:
@@ -69,9 +68,8 @@ class Ship:
         else:
             self.fillBoard()
 
-
     def filled(self):
-        ''' 
+        '''
         Function to chek if a ship already occupies a space on users board
         '''
         for coords in self.coordinates:
@@ -79,17 +77,15 @@ class Ship:
                 return True
         return False
 
-
     def fillBoard(self):
-        ''' 
+        '''
         Function to fill a space on user's board
         '''
         for coords in self.coordinates:
             board[coords['row']][coords['col']] = 1
 
-
     def contains(self, location):
-        ''' 
+        '''
         Function to check if the location does contain a ship on the user's board
         '''
         for coords in self.coordinates:
@@ -97,9 +93,8 @@ class Ship:
                 return True
         return False
 
- 
     def destroyed(self):
-        ''' 
+        '''
         Function to check if ship destroyed on user's board
         '''
         for coords in self.coordinates:
@@ -110,8 +105,8 @@ class Ship:
         return True
 
 # Settings Variables
-row_size = 8 # number of rows
-col_size = 8 # number of columns
+row_size = 8  # number of rows
+col_size = 8  # number of columns
 num_ships = 4
 max_ship_size = 5
 min_ship_size = 2
@@ -128,7 +123,7 @@ board_display = [["O"] * col_size for x in range(row_size)]
 
 
 def print_board(board_array):
-    ''' 
+    '''
     Function to print board
     '''
     print("\n  " + " ".join(str(x) for x in range(1, col_size + 1)))
@@ -139,7 +134,8 @@ def print_board(board_array):
 
 def search_locations(size, orientation):
     '''
-    Function to searh for locations based on size and orientation constraints including if statements to remain within range of board 
+    Function to searh for locations based on size and orientation constraints
+    including if statements to remain within range of board
     '''
     locations = []
 
@@ -166,7 +162,7 @@ def search_locations(size, orientation):
 
 
 def random_location():
-    ''' 
+    '''
     Function to generate a random ship location
     '''
     size = randint(min_ship_size, max_ship_size)
@@ -228,7 +224,7 @@ answer = input("Do you accept the mission? (yes/no)\n")
 if answer.lower().strip() == "no":
     print(f"Too bad {user_name}, we could have done with a brave soldier")
     quit()
-else: 
+else:
     os.system('clear')
     print_board(board_display)
 
@@ -237,7 +233,7 @@ else:
         print("Ships left:", len(ship_list))
         print("Get ready to fire!")
         print()
-        
+
         guess_coords = {}
         while True:
             guess_coords['row'] = get_row()
@@ -265,13 +261,12 @@ else:
             print("You missed...")
 
         print_board(board_display)
-        
+
         if not ship_list:
-            break      
+            break
 
 # End Game (including print if users wins when there are no more ships to sink or print if user loses if ships are still left)
 if ship_list:
     print(f"Oh no...you have failed this time soldier {user_name}...it looks like Chatarra's troups will steal our gold. You can always press on Run Program to try again")
 else:
     print(f"Mission accomplished {user_name}! You managed to sink all of the enemy's ships and you saved our gold!")
-
