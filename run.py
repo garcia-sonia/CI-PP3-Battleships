@@ -7,11 +7,11 @@ user_instructions = """You look like a brave soldier.
 This is your mission: 
 You must defend Oros harbour from our enemy Chatarra.
 Oros is much coveted for the precious golden mineral covering our cliffs.
-Our watchmen have spotted the enemy's float fast approaching.
+Our watchmen have spotted the enemy's fleet fast approaching.
 You will have to destroy their 4 ships before they land.
-If you do not succeed, they will still our gold.
+If you do not succeed, they will steal our gold.
 You only have 30 cannonballs to complete your mission.
-Do not run out of ammunition or Chatarra's troups will make it ashore.
+Do not run out of ammunition or Chatarra's troops will make it ashore.
  
 The fate of Oros harbour is in your hands...
 
