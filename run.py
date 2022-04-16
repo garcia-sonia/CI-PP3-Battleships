@@ -1,6 +1,26 @@
 from random import randint
 import os
 
+
+user_instructions = """You look like a brave solider. This is your mission: 
+You have been appointed to defend the fishing village of Tarric.
+Tarric is much coveted by pirates because of the precious golden mineral covering its cliffs
+and strategical position in the Medsalted sea.
+Your mates have spotted the enemy's float fast approaching, it consists of 4 ships,
+size 2, 3, 4 and 5. You are in charge of directing the canons, you must aim properly
+and manage to destroy the four ships before running out of amunition. You only have
+30 bullets to do so. The fate of the village is in your hands...)"""
+
+
+
+
+
+
+
+
+
+
+
 # Ship Class
 
 
@@ -176,25 +196,6 @@ def get_col():
         except ValueError:
             print("\nPlease enter a valid number")
 
-def ask_user_play():
-"""
-Will ask user if they want to play the game
-"""
-while True:
-    confirmation_response = input("yes or no?\n").lower()
-
-    if confirmation_response == 'yes':
-        start_game()
-        break
-    elif confirmation_response == 'no':
-        end_game()
-        break
-    else:
-        print('')
-        print("You must type either 'yes' or 'no'!")
-        print('')
-
-
 # Create the ships
 temp = 0
 while temp < num_ships:
@@ -207,45 +208,53 @@ while temp < num_ships:
 del temp
 
 # Play Game (including print number of ships left, print if hit or miss and print if one ship is fully sunk)
-os.system('clear')
-ask_user_play()
-print_board(board_display)
 
-for turn in range(num_turns):
-    print("Turn:", turn + 1, "of", num_turns)
-    print("Ships left:", len(ship_list))
-    print()
-  
-    guess_coords = {}
-    while True:
-        guess_coords['row'] = get_row()
-        guess_coords['col'] = get_col()
-        if board_display[guess_coords['row']][guess_coords['col']] == 'X' or \
-           board_display[guess_coords['row']][guess_coords['col']] == '*':
-            print("\nYou guessed that one already.")
-        else:
-            break
 
+print("Welcome to Battleships")
+answer = input("Would you like to play? (yes/no)")
+
+if answer.lower().strip() == "no":
+    print("Too bad, we could have done with a brave soldier")
+    quit()
+else: 
     os.system('clear')
-
-    ship_hit = False
-    for ship in ship_list:
-        if ship.contains(guess_coords):
-            print("Hit!")
-            ship_hit = True
-            board_display[guess_coords['row']][guess_coords['col']] = 'X'
-            if ship.destroyed():
-                print("You sunk a ship!")
-                ship_list.remove(ship)
-            break
-    if not ship_hit:
-        board_display[guess_coords['row']][guess_coords['col']] = '*'
-        print("You missed...")
-
     print_board(board_display)
-  
-    if not ship_list:
-        break
+
+    for turn in range(num_turns):
+        print("Turn:", turn + 1, "of", num_turns)
+        print("Ships left:", len(ship_list))
+        print()
+        
+        guess_coords = {}
+        while True:
+            guess_coords['row'] = get_row()
+            guess_coords['col'] = get_col()
+            if board_display[guess_coords['row']][guess_coords['col']] == 'X' or \
+            board_display[guess_coords['row']][guess_coords['col']] == '*':
+                print("\nYou guessed that one already.")
+            else:
+                break
+
+        os.system('clear')
+
+        ship_hit = False
+        for ship in ship_list:
+            if ship.contains(guess_coords):
+                print("Hit!")
+                ship_hit = True
+                board_display[guess_coords['row']][guess_coords['col']] = 'X'
+                if ship.destroyed():
+                    print("You sunk a ship!")
+                    ship_list.remove(ship)
+                break
+        if not ship_hit:
+            board_display[guess_coords['row']][guess_coords['col']] = '*'
+            print("You missed...")
+
+        print_board(board_display)
+        
+        if not ship_list:
+            break      
 
 # End Game (including print if users wins when there are no more ships to sink or print if user loses if ships are still left)
 if ship_list:
