@@ -117,7 +117,6 @@ board_display = [["O"] * col_size for x in range(row_size)]
 Function to print board
 '''
 def print_board(board_array):
-    print("Get ready to fire!")
     print("\n  " + " ".join(str(x) for x in range(1, col_size + 1)))
     for r in range(row_size):
         print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
@@ -218,6 +217,7 @@ else:
     for turn in range(num_turns):
         print("Turn:", turn + 1, "of", num_turns)
         print("Ships left:", len(ship_list))
+        print("Get ready to fire!")
         print()
         
         guess_coords = {}
