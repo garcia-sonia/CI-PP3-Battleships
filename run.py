@@ -164,7 +164,7 @@ def random_location():
         return {'location': locations[randint(0, len(locations) - 1)],
                 'size': size, 'orientation': orientation}
 
-''' 
+'''
 Function to facilitate input of row guess and print an error message if out of scope
 '''
 def get_row():
@@ -178,9 +178,9 @@ def get_row():
         except ValueError:
             print("\nPlease enter a valid number")
 
-''' 
+"""
 Function to facilitate input of column guess and print an error message if out of scope
-'''
+"""
 def get_col():
     while True:
         try:
