@@ -29,10 +29,11 @@ print(user_instructions)
 
 class Ship:
 
-    '''
-    Function to define size, orientation and location of user's ships
-    '''
+
     def __init__(self, size, orientation, location):
+        '''
+        Function to define size, orientation and location of user's ships
+        '''
         self.size = size
     
         if orientation == 'horizontal' or orientation == 'vertical':
@@ -68,35 +69,39 @@ class Ship:
         else:
             self.fillBoard()
 
-    ''' 
-    Function to chek if a ship already occupies a space on users board
-    '''
+
     def filled(self):
+        ''' 
+        Function to chek if a ship already occupies a space on users board
+        '''
         for coords in self.coordinates:
             if board[coords['row']][coords['col']] == 1:
                 return True
         return False
 
-    ''' 
-    Function to fill a space on user's board
-    '''
+
     def fillBoard(self):
+        ''' 
+        Function to fill a space on user's board
+        '''
         for coords in self.coordinates:
             board[coords['row']][coords['col']] = 1
 
-    ''' 
-    Function to check if the location does contain a ship on the user's board
-    '''
+
     def contains(self, location):
+        ''' 
+        Function to check if the location does contain a ship on the user's board
+        '''
         for coords in self.coordinates:
             if coords == location:
                 return True
         return False
 
-    ''' 
-    Function to check if ship destroyed on user's board
-    '''
+ 
     def destroyed(self):
+        ''' 
+        Function to check if ship destroyed on user's board
+        '''
         for coords in self.coordinates:
             if board_display[coords['row']][coords['col']] == 'O':
                 return False
@@ -121,19 +126,21 @@ board_display = [["O"] * col_size for x in range(row_size)]
 
 # All Other Functions
 
-''' 
-Function to print board
-'''
+
 def print_board(board_array):
+    ''' 
+    Function to print board
+    '''
     print("\n  " + " ".join(str(x) for x in range(1, col_size + 1)))
     for r in range(row_size):
         print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
     print()
 
-'''
-Function to searh for locations based on size and orientation constraints including if statements to remain within range of board 
-'''
+
 def search_locations(size, orientation):
+    '''
+    Function to searh for locations based on size and orientation constraints including if statements to remain within range of board 
+    '''
     locations = []
 
     if orientation != 'horizontal' and orientation != 'vertical':
@@ -157,10 +164,11 @@ def search_locations(size, orientation):
     else:
         return locations
 
-''' 
-Function to generate a random ship location
-'''
+
 def random_location():
+    ''' 
+    Function to generate a random ship location
+    '''
     size = randint(min_ship_size, max_ship_size)
     orientation = 'horizontal' if randint(0, 1) == 0 else 'vertical'
 
@@ -171,10 +179,11 @@ def random_location():
         return {'location': locations[randint(0, len(locations) - 1)],
                 'size': size, 'orientation': orientation}
 
-'''
-Function to facilitate input of row guess and print an error message if out of scope
-'''
+
 def get_row():
+    '''
+    Function to facilitate input of row guess and print an error message if out of scope
+    '''
     while True:
         try:
             guess = int(input("Row Guess:\n"))
@@ -185,10 +194,11 @@ def get_row():
         except ValueError:
             print("\nPlease enter a valid number")
 
-"""
-Function to facilitate input of column guess and print an error message if out of scope
-"""
+
 def get_col():
+    '''
+    Function to facilitate input of column guess and print an error message if out of scope
+    '''
     while True:
         try:
             guess = int(input("Column Guess:\n"))
