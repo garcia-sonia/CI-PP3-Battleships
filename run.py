@@ -122,10 +122,11 @@ board_display = [["O"] * col_size for x in range(row_size)]
 Function to print board
 '''
 def print_board(board_array):
-  print("\n  " + " ".join(str(x) for x in range(1, col_size + 1)))
-  for r in range(row_size):
-    print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
-  print()
+    print("Get ready to fire!")
+    print("\n  " + " ".join(str(x) for x in range(1, col_size + 1)))
+    for r in range(row_size):
+        print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
+    print()
 
 '''
 Function to searh for locations based on size and orientation constraints including if statements to remain within range of board 
