@@ -3,18 +3,20 @@ import os
 
 
 user_instructions = """You look like a brave soldier. 
+
 This is your mission: 
-You must defend the fishing village of Tarric from the ennemy.
-Tarric is much coveted because of the precious golden mineral covering its cliffs.
-Your regiment has spotted the ennemy's float fast approaching.
-You must prevent the ships from landing or they will steel the gold.
-You will have to destroy their 4 ships.
-The village only has a stock of 30 cannonballs.
-Do not run out of amunition or the ennemy will make it ashore. 
-The fate of the village is in your hands...
+You must defend Oros harbour from our enemy Chatarra.
+Oros is much coveted for the precious golden mineral covering our cliffs.
+Our watchmen have spotted the enemy's float fast approaching.
+You will have to destroy their 4 ships before they land.
+If you do not succeed, they will still our gold.
+You only have 30 cannonballs to complete your mission.
+Do not run out of ammunition or Chatarra's troups will make it ashore.
+ 
+The fate of Oros harbour is in your hands...
 
 One more thing:
-On the grid, all coordinates are marked as'O' to begin with. If a ship is
+On the grid, all coordinates are marked as 'O' to begin with. If a ship is
 hit, it will be marked as 'X'. If it's a miss, it will be marked
 as '-'."""
 
@@ -258,7 +260,7 @@ else:
 
 # End Game (including print if users wins when there are no more ships to sink or print if user loses if ships are still left)
 if ship_list:
-    print("Oh no... You lose...")
+    print("Oh no...you have failed this time soldier...it looks like Chatarra's troups will steal our gold. You can always press on Run Program to try again")
 else:
-    print("You managed to sink all the ships! Congratulations, you are the winner!")
+    print("Victory! You managed to sink all of the enemy's ships! Mission accomplished soldier, you saved our gold!")
 
