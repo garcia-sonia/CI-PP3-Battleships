@@ -170,7 +170,7 @@ Function to facilitate input of row guess and print an error message if out of s
 def get_row():
     while True:
         try:
-            guess = int(input("Row Guess: "))
+            guess = int(input("Row Guess:\n"))
             if guess in range(1, row_size + 1):
                 return guess - 1
             else:
@@ -184,7 +184,7 @@ Function to facilitate input of column guess and print an error message if out o
 def get_col():
     while True:
         try:
-            guess = int(input("Column Guess: "))
+            guess = int(input("Column Guess:\n"))
             if guess in range(1, col_size + 1):
                 return guess - 1
             else:
@@ -206,7 +206,7 @@ del temp
 # Play Game (including print number of ships left, print if hit or miss and print if one ship is fully sunk)
 
 
-answer = input("Do you accept the mission? (yes/no)")
+answer = input("Do you accept the mission? (yes/no)\n")
 
 if answer.lower().strip() == "no":
     print("Too bad, we could have done with a brave soldier")
