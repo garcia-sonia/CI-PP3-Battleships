@@ -2,23 +2,18 @@ from random import randint
 import os
 
 
-user_instructions = """You look like a brave solider. This is your mission: 
-You have been appointed to defend the fishing village of Tarric.
-Tarric is much coveted by pirates because of the precious golden mineral covering its cliffs
-and strategical position in the Medsalted sea.
-Your mates have spotted the enemy's float fast approaching, it consists of 4 ships,
-size 2, 3, 4 and 5. You are in charge of directing the canons, you must aim properly
-and manage to destroy the four ships before running out of amunition. You only have
-30 bullets to do so. The fate of the village is in your hands...)"""
+user_instructions = """You look like a brave soldier. 
+This is your mission: 
+You must defend the fishing village of Tarric from the ennemy.
+Tarric is much coveted because of the precious golden mineral covering its cliffs.
+Your regiment has spotted the ennemy's float fast approaching.
+You must prevent the ships from landing or they will steel the gold.
+You will have to destroy their 4 ships.
+The village only has a stock of 30 cannonballs.
+Do not run out of amunition or the ennemy will make it ashore. 
+The fate of the village is in your hands...)"""
 
-
-
-
-
-
-
-
-
+print(user_instructions)
 
 
 # Ship Class
@@ -211,8 +206,7 @@ del temp
 # Play Game (including print number of ships left, print if hit or miss and print if one ship is fully sunk)
 
 
-print("Welcome to Battleships")
-answer = input("Would you like to play? (yes/no)")
+answer = input("Do you accept the mission? (yes/no)")
 
 if answer.lower().strip() == "no":
     print("Too bad, we could have done with a brave soldier")
