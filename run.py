@@ -11,7 +11,12 @@ You must prevent the ships from landing or they will steel the gold.
 You will have to destroy their 4 ships.
 The village only has a stock of 30 cannonballs.
 Do not run out of amunition or the ennemy will make it ashore. 
-The fate of the village is in your hands...)"""
+The fate of the village is in your hands...
+
+One more thing:
+On the grid, all coordinates are marked as'O' to begin with. If a ship is
+hit, it will be marked as 'X'. If it's a miss, it will be marked
+as '-'."""
 
 print(user_instructions)
 
@@ -92,7 +97,7 @@ class Ship:
         for coords in self.coordinates:
             if board_display[coords['row']][coords['col']] == 'O':
                 return False
-            elif board_display[coords['row']][coords['col']] == '*':
+            elif board_display[coords['row']][coords['col']] == '-':
                 raise RuntimeError("Board display inaccurate")
         return True
 
@@ -225,7 +230,7 @@ else:
             guess_coords['row'] = get_row()
             guess_coords['col'] = get_col()
             if board_display[guess_coords['row']][guess_coords['col']] == 'X' or \
-            board_display[guess_coords['row']][guess_coords['col']] == '*':
+            board_display[guess_coords['row']][guess_coords['col']] == '-':
                 print("\nYou guessed that one already.")
             else:
                 break
@@ -243,7 +248,7 @@ else:
                     ship_list.remove(ship)
                 break
         if not ship_hit:
-            board_display[guess_coords['row']][guess_coords['col']] = '*'
+            board_display[guess_coords['row']][guess_coords['col']] = '-'
             print("You missed...")
 
         print_board(board_display)
