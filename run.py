@@ -145,8 +145,7 @@ def search_locations(size, orientation):
     locations = []
 
     if orientation != 'horizontal' and orientation != 'vertical':
-        raise ValueError("Orientation must have a value of either
-                         'horizontal' or 'vertical'.")
+        raise ValueError("Orientation must be 'horizontal' or 'vertical'.")
 
     if orientation == 'horizontal':
         if size <= col_size:
@@ -278,10 +277,6 @@ else:
 # End Game (including print if users wins when there are no more ships to sink
 # or print if user loses if ships are still left)
 if ship_list:
-    print(f"Oh no...you have failed this time soldier {user_name}...
-          it looks like Chatarra's troups will steal our gold.
-          You can always press on 'Run Program' to try again")
+    print(f"Oh no...you have failed this time soldier {user_name}...it looks like Chatarra's troups will steal our gold. You can always press on 'Run Program' to try again")
 else:
-    print(f"Mission accomplished {user_name}!
-          You managed to sink all of the enemy's
-          ships and you saved our gold!")
+    print(f"Mission accomplished {user_name}! You managed to sink all of the enemy's ships and you saved our gold!")
