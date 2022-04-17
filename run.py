@@ -184,7 +184,8 @@ def random_location():
 
 def get_row():
     '''
-    Function to facilitate input of row guess and print an error message if out of scope
+    Function to facilitate input of row guess and print an error message
+    if out of scope
     '''
     while True:
         try:
@@ -199,7 +200,8 @@ def get_row():
 
 def get_col():
     '''
-    Function to facilitate input of column guess and print an error message if out of scope
+    Function to facilitate input of column guess and print
+    an error message if out of scope
     '''
     while True:
         try:
@@ -218,11 +220,13 @@ while temp < num_ships:
     if ship_info == 'None':
         continue
     else:
-        ship_list.append(Ship(ship_info['size'], ship_info['orientation'], ship_info['location']))
+        ship_list.append(Ship(ship_info['size'], ship_info['orientation'],
+                         ship_info['location']))
         temp += 1
 del temp
 
-# Play Game (including print number of ships left, print if hit or miss and print if one ship is fully sunk)
+# Play Game (including print number of ships left, print if hit
+# or miss and print if one ship is fully sunk)
 
 
 answer = input("Do you accept the mission? (yes/no)\n")
