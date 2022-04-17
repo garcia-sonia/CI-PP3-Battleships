@@ -58,7 +58,9 @@ class Ship:
                 self.coordinates = []
                 for index in range(size):
                     if location['row'] + index in range(row_size):
-                        self.coordinates.append({'row': location['row'] + index, 'col': location['col']})
+                        self.coordinates.append({
+                            'row': location['row'] + index,
+                            'col': location['col']})
                     else:
                         raise IndexError("Row is out of range.")
             else:
@@ -143,7 +145,8 @@ def search_locations(size, orientation):
     locations = []
 
     if orientation != 'horizontal' and orientation != 'vertical':
-        raise ValueError("Orientation must have a value of either 'horizontal' or 'vertical'.")
+        raise ValueError("Orientation must have a value of either
+                         'horizontal' or 'vertical'.")
 
     if orientation == 'horizontal':
         if size <= col_size:
