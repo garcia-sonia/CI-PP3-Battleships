@@ -24,8 +24,9 @@ as '-'."""
 print(user_instructions)
 
 
-# Ship Class
 
+# Code credit on Ship class / OOP goes to Cloud2236863496
+# https://discuss.codecademy.com/u/cloud2236863496/summary
 
 class Ship:
 
