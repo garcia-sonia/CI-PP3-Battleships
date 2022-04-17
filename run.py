@@ -23,16 +23,15 @@ as '-'."""
 
 print(user_instructions)
 
-
-
 # Code credit on Ship class / OOP goes to Cloud2236863496
 # https://discuss.codecademy.com/u/cloud2236863496/summary
+
 
 class Ship:
 
     def __init__(self, size, orientation, location):
         '''
-        Function to define size, orientation and location of user's ships
+        Function to define size, orientation and location of ships
         '''
         self.size = size
 
@@ -46,7 +45,10 @@ class Ship:
                 self.coordinates = []
                 for index in range(size):
                     if location['col'] + index in range(col_size):
-                        self.coordinates.append({'row': location['row'], 'col': location['col'] + index})
+                        self.coordinates.append({
+                            'row': location['row'],
+                            'col': location['col'] +
+                            index})
                     else:
                         raise IndexError("Column is out of range.")
             else:
@@ -71,7 +73,7 @@ class Ship:
 
     def filled(self):
         '''
-        Function to chek if a ship already occupies a space on users board
+        Function to chek if a ship already occupies a space on board
         '''
         for coords in self.coordinates:
             if board[coords['row']][coords['col']] == 1:
@@ -80,14 +82,14 @@ class Ship:
 
     def fillBoard(self):
         '''
-        Function to fill a space on user's board
+        Function to fill a space on board
         '''
         for coords in self.coordinates:
             board[coords['row']][coords['col']] = 1
 
     def contains(self, location):
         '''
-        Function to check if the location does contain a ship on the user's board
+        Function to check if the location does contain a ship on board
         '''
         for coords in self.coordinates:
             if coords == location:
@@ -270,4 +272,6 @@ else:
 if ship_list:
     print(f"Oh no...you have failed this time soldier {user_name}...it looks like Chatarra's troups will steal our gold. You can always press on Run Program to try again")
 else:
-    print(f"Mission accomplished {user_name}! You managed to sink all of the enemy's ships and you saved our gold!")
+    print(f"Mission accomplished {user_name}!
+          You managed to sink all of the enemy's
+          ships and you saved our gold!")
