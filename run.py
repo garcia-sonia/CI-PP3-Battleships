@@ -133,8 +133,8 @@ def print_board(board_array):
     Function to print board
     '''
     print("\n  " + " ".join(str(x) for x in range(1, COL_SIZE + 1)))
-    for r in range(ROW_SIZE):
-        print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
+    for row in range(ROW_SIZE):
+        print(str(row + 1) + " " + " ".join(str(column) for column in board_array[row]))
     print()
 
 
@@ -150,16 +150,16 @@ def search_locations(size, orientation):
 
     if orientation == 'horizontal':
         if size <= COL_SIZE:
-            for r in range(ROW_SIZE):
-                for c in range(COL_SIZE - size + 1):
-                    if 1 not in board[r][c:c+size]:
-                        locations.append({'row': r, 'col': c})
+            for row in range(ROW_SIZE):
+                for column in range(COL_SIZE - size + 1):
+                    if 1 not in board[row][column:column+size]:
+                        locations.append({'row': row, 'col': column})
     elif orientation == 'vertical':
         if size <= ROW_SIZE:
-            for c in range(COL_SIZE):
-                for r in range(ROW_SIZE - size + 1):
-                    if 1 not in [board[i][c] for i in range(r, r+size)]:
-                        locations.append({'row': r, 'col': c})
+            for column in range(COL_SIZE):
+                for row in range(ROW_SIZE - size + 1):
+                    if 1 not in [board[i][column] for i in range(row, row+size)]:
+                        locations.append({'row': row, 'col': column})
 
     if not locations:
         return 'None'
