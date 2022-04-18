@@ -71,7 +71,7 @@ class Ship:
             print(" ".join(str(coords) for coords in self.coordinates))
             raise IndexError("A ship already occupies that space.")
         else:
-            self.fillBoard()
+            self.fill_board()
 
     def filled(self):
         '''
@@ -82,7 +82,7 @@ class Ship:
                 return True
         return False
 
-    def fillBoard(self):
+    def fill_board(self):
         '''
         Function to fill a space on board
         '''
