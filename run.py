@@ -134,7 +134,8 @@ def print_board(board_array):
     '''
     print("\n  " + " ".join(str(x) for x in range(1, COL_SIZE + 1)))
     for row in range(ROW_SIZE):
-        print(str(row + 1) + " " + " ".join(str(column) for column in board_array[row]))
+        print(str(row + 1) + " " + " ".join(str(column)
+              for column in board_array[row]))
     print()
 
 
@@ -158,7 +159,8 @@ def search_locations(size, orientation):
         if size <= ROW_SIZE:
             for column in range(COL_SIZE):
                 for row in range(ROW_SIZE - size + 1):
-                    if 1 not in [board[i][column] for i in range(row, row+size)]:
+                    if 1 not in [board[i][column]
+                                 for i in range(row, row+size)]:
                         locations.append({'row': row, 'col': column})
 
     if not locations:
