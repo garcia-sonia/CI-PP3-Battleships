@@ -115,7 +115,7 @@ col_size = 8  # number of columns
 num_ships = 4
 max_ship_size = 5
 min_ship_size = 2
-num_turns = 30
+NUM_TURNS = 30
 
 # Create lists
 ship_list = []
@@ -212,17 +212,18 @@ def get_col():
         except ValueError:
             print("\nPlease enter a valid number")
 
+
 # Create the ships
-temp = 0
-while temp < num_ships:
-    ship_info = random_location()
-    if ship_info == 'None':
+TEMP = 0
+while TEMP < num_ships:
+    ship_char = random_location()
+    if ship_char == 'None':
         continue
     else:
-        ship_list.append(Ship(ship_info['size'], ship_info['orientation'],
-                         ship_info['location']))
-        temp += 1
-del temp
+        ship_list.append(Ship(ship_char['size'], ship_char['orientation'],
+                         ship_char['location']))
+        TEMP += 1
+del TEMP
 
 # Play Game (including print number of ships left, print if hit
 # or miss and print if one ship is fully sunk)
@@ -237,8 +238,8 @@ else:
     os.system('clear')
     print_board(board_display)
 
-    for turn in range(num_turns):
-        print("Turn:", turn + 1, "of", num_turns)
+    for turn in range(NUM_TURNS):
+        print("Turn:", turn + 1, "of", NUM_TURNS)
         print("Ships left:", len(ship_list))
         print("Get ready to fire!")
         print()
