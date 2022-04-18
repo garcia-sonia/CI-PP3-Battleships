@@ -260,17 +260,17 @@ else:
 
         os.system('clear')
 
-        ship_hit = False
+        SHIP_HIT = False
         for ship in ship_list:
             if ship.contains(guess_coords):
                 print("Hit!")
-                ship_hit = True
+                SHIP_HIT = True
                 board_display[guess_coords['row']][guess_coords['col']] = 'X'
                 if ship.destroyed():
                     print("You sunk a ship!")
                     ship_list.remove(ship)
                 break
-        if not ship_hit:
+        if not SHIP_HIT:
             board_display[guess_coords['row']][guess_coords['col']] = '-'
             print("You missed...")
 
