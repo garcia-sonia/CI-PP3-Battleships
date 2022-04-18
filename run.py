@@ -109,12 +109,13 @@ class Ship:
                 raise RuntimeError("Board display inaccurate")
         return True
 
+
 # Settings Variables
-ROW_SIZE = 8  # number of rows
-COL_SIZE = 8  # number of columns
-num_ships = 4
-max_ship_size = 5
-min_ship_size = 2
+ROW_SIZE = 8
+COL_SIZE = 8
+NUM_SHIPS = 4
+MAX_SHIP_SIZE = 5
+MIN_SHIP_SIZE = 2
 NUM_TURNS = 30
 
 # Create lists
@@ -170,7 +171,7 @@ def random_location():
     '''
     Function to generate a random ship location
     '''
-    size = randint(min_ship_size, max_ship_size)
+    size = randint(MIN_SHIP_SIZE, MAX_SHIP_SIZE)
     orientation = 'horizontal' if randint(0, 1) == 0 else 'vertical'
 
     locations = search_locations(size, orientation)
@@ -215,7 +216,7 @@ def get_col():
 
 # Create the ships
 TEMP = 0
-while TEMP < num_ships:
+while TEMP < NUM_SHIPS:
     ship_char = random_location()
     if ship_char == 'None':
         continue
