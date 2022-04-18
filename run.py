@@ -5,7 +5,7 @@ user_name = input("Welcome to Thirty Shots. What is your name?\n")
 print("")
 print(f"You look like a brave soldier {user_name}")
 
-user_instructions = """\nThis is your mission:
+USER_INSTRUCTIONS = """\nThis is your mission:
 You must defend Oros harbour from our enemy Chatarra.
 Oros is much coveted for the precious golden mineral covering our cliffs.
 Our watchmen have spotted the enemy's fleet fast approaching.
@@ -21,7 +21,7 @@ On the grid, all coordinates are marked as 'O' to begin with. If a ship is
 hit, it will be marked as 'X'. If it's a miss, it will be marked
 as '-'."""
 
-print(user_instructions)
+print(USER_INSTRUCTIONS)
 
 # Code credit on Ship class / OOP goes to Cloud2236863496
 # https://discuss.codecademy.com/u/cloud2236863496/summary
