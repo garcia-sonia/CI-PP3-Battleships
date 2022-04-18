@@ -247,8 +247,11 @@ else:
         while True:
             guess_coords['row'] = get_row()
             guess_coords['col'] = get_col()
-            if board_display[guess_coords['row']][guess_coords['col']] == 'X' or \
-            board_display[guess_coords['row']][guess_coords['col']] == '-':
+            if (
+                board_display[guess_coords['row']]
+                [guess_coords['col']] == 'X' or
+                board_display[guess_coords['row']][guess_coords['col']] == '-'
+            ):
                 print("\nYou guessed that one already.")
             else:
                 break
