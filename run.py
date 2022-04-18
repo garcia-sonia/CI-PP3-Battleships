@@ -41,10 +41,10 @@ class Ship:
             raise ValueError("Value must be 'horizontal' or 'vertical'.")
 
         if orientation == 'horizontal':
-            if location['row'] in range(row_size):
+            if location['row'] in range(ROW_SIZE):
                 self.coordinates = []
                 for index in range(size):
-                    if location['col'] + index in range(col_size):
+                    if location['col'] + index in range(COL_SIZE):
                         self.coordinates.append({
                             'row': location['row'],
                             'col': location['col'] +
@@ -54,10 +54,10 @@ class Ship:
             else:
                 raise IndexError("Row is out of range.")
         elif orientation == 'vertical':
-            if location['col'] in range(col_size):
+            if location['col'] in range(COL_SIZE):
                 self.coordinates = []
                 for index in range(size):
-                    if location['row'] + index in range(row_size):
+                    if location['row'] + index in range(ROW_SIZE):
                         self.coordinates.append({
                             'row': location['row'] + index,
                             'col': location['col']})
@@ -110,8 +110,8 @@ class Ship:
         return True
 
 # Settings Variables
-row_size = 8  # number of rows
-col_size = 8  # number of columns
+ROW_SIZE = 8  # number of rows
+COL_SIZE = 8  # number of columns
 num_ships = 4
 max_ship_size = 5
 min_ship_size = 2
@@ -120,9 +120,9 @@ NUM_TURNS = 30
 # Create lists
 ship_list = []
 
-board = [[0] * col_size for x in range(row_size)]
+board = [[0] * COL_SIZE for x in range(ROW_SIZE)]
 
-board_display = [["O"] * col_size for x in range(row_size)]
+board_display = [["O"] * COL_SIZE for x in range(ROW_SIZE)]
 
 # All Other Functions
 
@@ -131,8 +131,8 @@ def print_board(board_array):
     '''
     Function to print board
     '''
-    print("\n  " + " ".join(str(x) for x in range(1, col_size + 1)))
-    for r in range(row_size):
+    print("\n  " + " ".join(str(x) for x in range(1, COL_SIZE + 1)))
+    for r in range(ROW_SIZE):
         print(str(r + 1) + " " + " ".join(str(c) for c in board_array[r]))
     print()
 
@@ -148,15 +148,15 @@ def search_locations(size, orientation):
         raise ValueError("Orientation must be 'horizontal' or 'vertical'.")
 
     if orientation == 'horizontal':
-        if size <= col_size:
-            for r in range(row_size):
-                for c in range(col_size - size + 1):
+        if size <= COL_SIZE:
+            for r in range(ROW_SIZE):
+                for c in range(COL_SIZE - size + 1):
                     if 1 not in board[r][c:c+size]:
                         locations.append({'row': r, 'col': c})
     elif orientation == 'vertical':
-        if size <= row_size:
-            for c in range(col_size):
-                for r in range(row_size - size + 1):
+        if size <= ROW_SIZE:
+            for c in range(COL_SIZE):
+                for r in range(ROW_SIZE - size + 1):
                     if 1 not in [board[i][c] for i in range(r, r+size)]:
                         locations.append({'row': r, 'col': c})
 
@@ -189,7 +189,7 @@ def get_row():
     while True:
         try:
             guess = int(input("Row Guess:\n"))
-            if guess in range(1, row_size + 1):
+            if guess in range(1, ROW_SIZE + 1):
                 return guess - 1
             else:
                 print("\nNo way, that was such a wild guess :P")
@@ -205,7 +205,7 @@ def get_col():
     while True:
         try:
             guess = int(input("Column Guess:\n"))
-            if guess in range(1, col_size + 1):
+            if guess in range(1, COL_SIZE + 1):
                 return guess - 1
             else:
                 print("\nNo way, that was such a wild guess :P")
