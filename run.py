@@ -2,7 +2,9 @@ from random import randint
 import os
 
 # Welcome message
-print("Welcome to\n")
+print('*' * 60)
+print('')
+print("Welcome to:")
 print(
     """
      _______   _    _   _   _____   _______  __    __
@@ -20,9 +22,10 @@ print(
 
 """
 )
+print('*' * 60)
+print('')
 
-
-user_name = input("Welcome to Thirty Shots. What is your name?\n")
+user_name = input("What is your name?\n")
 print("")
 print(f"You look like a brave soldier {user_name}")
 
