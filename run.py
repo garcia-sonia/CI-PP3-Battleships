@@ -1,6 +1,27 @@
 from random import randint
 import os
 
+# Welcome message
+print("Welcome to\n")
+print(
+    """
+     _______   _    _   _   _____   _______  __    __
+    |__   __| | |  | | | | |  __ \ |__   __| \ \  / /
+       | |    | |__| | | | | |__| |   | |     \ \/ /
+       | |    |  __  | | | |  __ /    | |      \  /
+       | |    | |  | | | | | |\ \     | |      |  | 
+       |_|    |_|  |_| |_| |_| \_\    |_|      |__|
+       ______   _    _   ______   _______   ______
+      /    __| | |  | | |  __  | |__   __| /    __|
+      |   (    | |__| | | |  | |    | |    \   (
+       \   \   |  __  | | |  | |    | |     \   \.
+     ___)   \  | |  | | | |__| |    | |   ___)   \.
+    |_______/  |_|  |_| |______|    |_|  |_______/
+
+"""
+)
+
+
 user_name = input("Welcome to Thirty Shots. What is your name?\n")
 print("")
 print(f"You look like a brave soldier {user_name}")
