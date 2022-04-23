@@ -19,7 +19,6 @@ print(
        \   \   |  __  | | |  | |    | |     \   \.
      ___)   \  | |  | | | |__| |    | |   ___)   \.
     |_______/  |_|  |_| |______|    |_|  |_______/
-
 """
 )
 print('*' * 60)
@@ -41,9 +40,9 @@ Do not run out of ammunition or Chatarra's troops will make it ashore.
 The fate of Oros harbour is in your hands...
 
 One more thing:
-On the grid, all coordinates are marked as 'O' to begin with. If a ship is
-hit, it will be marked as 'X'. If it's a miss, it will be marked
-as '-'."""
+If a ship is hit, it will be marked as 'X'
+If it's a miss, it will be marked as '-'.
+"""
 
 print(USER_INSTRUCTIONS)
 
