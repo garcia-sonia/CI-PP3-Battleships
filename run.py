@@ -111,8 +111,8 @@ class Ship:
 
 
 # Settings Variables
-ROW_SIZE = 8
-COL_SIZE = 8
+ROW_SIZE = 7
+COL_SIZE = 7
 NUM_SHIPS = 4
 MAX_SHIP_SIZE = 5
 MIN_SHIP_SIZE = 2
