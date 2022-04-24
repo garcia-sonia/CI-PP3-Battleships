@@ -1,6 +1,7 @@
 from random import randint
 import os
 
+
 # Welcome message
 print('*' * 60)
 print('')
@@ -25,7 +26,7 @@ print('*' * 60)
 print('')
 
 user_name = input("What is your name?\n")
-print("")
+os.system('cls||clear')
 print(f"You look like a brave soldier {user_name}")
 
 USER_INSTRUCTIONS = """\nThis is your mission:
