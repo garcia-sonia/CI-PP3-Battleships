@@ -316,5 +316,5 @@ You can always press on 'Run Program' to try again"""
 else:
     print(f"Mission accomplished {user_name}!")
     print("")
-    pritn("""You managed to sink all of the enemy's ships
+    print("""You managed to sink all of the enemy's ships
 and you saved our gold!""")
