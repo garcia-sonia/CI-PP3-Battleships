@@ -1,13 +1,26 @@
 from random import randint
 import os
 
+class Colors:
+    """
+    This class defines basic color pallette used in the game.
+    """
+    RED = '\033[91m'
+    VIOLET = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'    
+    WHITE = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 
 # Welcome message
 print('*' * 60)
 print('')
 print("Welcome to:")
 print(
-    """
+    f"""{Colors.VIOLET}{Colors.BOLD}
      _______   _    _   _   _____   _______  __    __
     |__   __| | |  | | | | |  __ \ |__   __| \ \  / /
        | |    | |__| | | | | |__| |   | |     \ \/ /
@@ -20,16 +33,16 @@ print(
        \   \   |  __  | | |  | |    | |     \   \.
      ___)   \  | |  | | | |__| |    | |   ___)   \.
     \_______/  |_|  |_| |______|    |_|  \_______/
-"""
+{Colors.WHITE}"""
 )
 print('*' * 60)
 print('')
 
 user_name = input("What is your name?\n")
 os.system('cls||clear')
-print(f"You look like a brave soldier {user_name}")
+print(f"\n{Colors.GREEN}You look like a brave soldier {user_name}{Colors.WHITE}")
 
-USER_INSTRUCTIONS = """\nThis is your mission:
+USER_INSTRUCTIONS = f"""\nThis is your mission:
 You must defend Oros harbour from our enemy Chatarra.
 Oros is much coveted for the precious golden mineral covering our cliffs.
 Our watchmen have spotted the enemy's fleet fast approaching.
@@ -38,7 +51,7 @@ If you do not succeed, they will steal our gold.
 You only have 30 cannonballs to complete your mission.
 Do not run out of ammunition or Chatarra's troops will make it ashore.
 
-The fate of Oros harbour is in your hands...
+{Colors.GREEN}The fate of Oros harbour is in your hands...{Colors.WHITE}
 
 One more thing:
 If a ship is hit, it will be marked as 'X'
@@ -256,19 +269,21 @@ del TEMP
 # or miss and print if one ship is fully sunk)
 
 
-answer = input("Do you accept the mission? (yes/no)\n")
+answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
 
 if answer.lower().strip() == "no":
-    print(f"Too bad {user_name}, we could have done with a brave soldier")
+    os.system('cls||clear')
+    print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier :-/{Colors.WHITE}")
     quit()
 else:
     os.system('clear')
+    print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}{Colors.WHITE}\n")
     print_board(board_display)
 
     for turn in range(NUM_TURNS):
-        print("Turn:", turn + 1, "of", NUM_TURNS)
-        print("Ships left:", len(ship_list))
-        print("Get ready to fire!")
+        print(f"{Colors.BLUE}Turn:", turn + 1, "of", NUM_TURNS)
+        print(f"{Colors.YELLOW}Ships left:", len(ship_list))
+        print(f"{Colors.RED}Get ready to fire!{Colors.WHITE}")
         print()
 
         guess_coords = {}
