@@ -46,7 +46,7 @@ If it's a miss, it will be marked as '-'.
 
 print(USER_INSTRUCTIONS)
 
-# Code credit on Ship class / OOP goes to Cloud2236863496
+# Code credit on Ship class goes to Cloud2236863496
 # https://discuss.codecademy.com/u/cloud2236863496/summary
 
 
