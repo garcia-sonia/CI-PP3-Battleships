@@ -47,10 +47,14 @@ Select your preferred deployment type:
 
 
 ## Credits
-- Code Institue Battleships tutorial
+- Code Institute's Battleships LMS tutorial
 - [Code credit on Ship class goes to Cloud2236863496](https://discuss.codecademy.com/u/cloud2236863496/summary)
+- Peer Code Review: I have looked at other CI students code for inspiration like [David Bowers](https://github.com/dnlbowers/battleships/blob/main/views/layout.html) layout.html code for inserting a background image, and [Lukaszkukla](https://github.com/lukaszkukla/hangman-x/blob/main/src/colors.py) code for including a range of colors in the text displayed in the console.
 - [Background clipart image of cliffs](https://www.clipsafari.com/clips/o313445-sea-cliffs)
 - [Favicon image of ship](https://upload.wikimedia.org/wikipedia/commons/9/95/P_ship_grey.svg)
+- [Clear console function copied from delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
+- [Code Institute for providing the template with a mock terminal to display my game via a webpage](https://github.com/Code-Institute-Org/python-essentials-template)
+
 
 ## Tools used
 - [Heroku app](https://www.heroku.com/)
