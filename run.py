@@ -60,6 +60,20 @@ If it's a miss, it will be marked as '-'.
 
 print(USER_INSTRUCTIONS)
 
+answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
+while True:
+    if answer.lower().strip() == "no":
+        os.system('cls||clear')
+        print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier :-/{Colors.WHITE}")
+        quit()
+    elif answer.lower().strip() == "yes":
+        os.system('clear')
+        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}{Colors.WHITE}\n")
+        print_board(board_display)
+    elif answer.lower().strip() != "yes" or "no":
+        print("You must enter yes or no")
+        answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
+
 
 class Ship:
 
@@ -264,58 +278,51 @@ del TEMP
 
 # Play Game (including print number of ships left, print if hit
 # or miss and print if one ship is fully sunk)
+print_board(board_display)    
+for turn in range(NUM_TURNS):
+    print(f"{Colors.BLUE}Turn:", turn + 1, "of", NUM_TURNS)
+    print(f"{Colors.YELLOW}Ships left:", len(ship_list))
+    print(f"{Colors.RED}Get ready to fire!{Colors.WHITE}")
+    print()
 
+    guess_coords = {}
+    while True:
+        guess_coords['row'] = get_row()
+        guess_coords['col'] = get_col()
+        if (
+            board_display[guess_coords['row']]
+            [guess_coords['col']] == 'X' or
+            board_display[guess_coords['row']][guess_coords['col']] == '-'
+        ):
+            print("\nYou guessed that one already.")
+        else:
+            break
 
-answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
-
-if answer.lower().strip() == "no":
-    os.system('cls||clear')
-    print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier :-/{Colors.WHITE}")
-    quit()
-else:
     os.system('clear')
-    print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}{Colors.WHITE}\n")
+
+    SHIP_HIT = False
+    for ship in ship_list:
+        if ship.contains(guess_coords):
+            print("Hit!")
+            SHIP_HIT = True
+            board_display[guess_coords['row']][guess_coords['col']] = 'X'
+            if ship.destroyed():
+                print("You sunk a ship!")
+                ship_list.remove(ship)
+            break
+    if not SHIP_HIT:
+        board_display[guess_coords['row']][guess_coords['col']] = '-'
+        print("You missed...")
+
     print_board(board_display)
 
-    for turn in range(NUM_TURNS):
-        print(f"{Colors.BLUE}Turn:", turn + 1, "of", NUM_TURNS)
-        print(f"{Colors.YELLOW}Ships left:", len(ship_list))
-        print(f"{Colors.RED}Get ready to fire!{Colors.WHITE}")
-        print()
+    if not ship_list:
+        break
 
-        guess_coords = {}
-        while True:
-            guess_coords['row'] = get_row()
-            guess_coords['col'] = get_col()
-            if (
-                board_display[guess_coords['row']]
-                [guess_coords['col']] == 'X' or
-                board_display[guess_coords['row']][guess_coords['col']] == '-'
-            ):
-                print("\nYou guessed that one already.")
-            else:
-                break
 
-        os.system('clear')
 
-        SHIP_HIT = False
-        for ship in ship_list:
-            if ship.contains(guess_coords):
-                print("Hit!")
-                SHIP_HIT = True
-                board_display[guess_coords['row']][guess_coords['col']] = 'X'
-                if ship.destroyed():
-                    print("You sunk a ship!")
-                    ship_list.remove(ship)
-                break
-        if not SHIP_HIT:
-            board_display[guess_coords['row']][guess_coords['col']] = '-'
-            print("You missed...")
 
-        print_board(board_display)
 
-        if not ship_list:
-            break
 
 # End Game (including print if users wins when there are no more ships to sink
 # or print if user loses if ships are still left)
