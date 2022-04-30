@@ -331,13 +331,13 @@ for turn in range(NUM_TURNS):
 # End Game (including print if users wins when there are no more ships to sink
 # or print if user loses if ships are still left)
 if ship_list:
-    print(f"Oh no...you have failed this time soldier {user_name}")
+    print(f"{Colors.YELLOW}Oh no...you have failed this time soldier {user_name}")
     print("")
     print("""It looks like Chatarra's troups will steal our gold.
-You can always press on 'Run Program' to try again"""
+You can always press on 'Run Program' to try again"""{Colors.WHITE}
 )    
 else:
-    print(f"Mission accomplished {user_name}!")
-    print("")
-    print("""You managed to sink all of the enemy's ships
-and you saved our gold!""")
+    print(f"{Colors.GREEN}Mission accomplished {user_name} \N{Sports Medal}!")
+    print("\U0001f396U000fe0f")
+    print(f"""You sunk all of Chatarra's ships
+and you saved our gold!{Colors.WHITE}""")
