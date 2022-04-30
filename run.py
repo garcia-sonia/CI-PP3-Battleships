@@ -276,18 +276,21 @@ while True:
         quit()
     elif answer.lower().strip() == "yes":
         os.system('clear')
-        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}. Now take a guess and get ready to fire!{Colors.WHITE}\n")
+        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}.")
+        print(f"Now take a guess and get ready to fire!{Colors.WHITE}")
         break
     else:
         print("You must enter yes or no")
         answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
 
 
-print_board(board_display)    
+print_board(board_display)   
 for turn in range(NUM_TURNS):
-    print(f"{Colors.BLUE}Turn:", turn + 1, "of", NUM_TURNS)
-    print(f"{Colors.YELLOW}Ships left:", len(ship_list))
-    print(f"{Colors.RED}Get ready to fire!{Colors.WHITE}")
+    print("*************")
+    print(f"{Colors.GREEN}Turn:", turn + 1, "of", NUM_TURNS)
+    print("Ships left:", len(ship_list))
+    print(f"Get ready to fire!{Colors.WHITE}")
+    print("*************")
     print()
 
     guess_coords = {}
@@ -308,16 +311,16 @@ for turn in range(NUM_TURNS):
     SHIP_HIT = False
     for ship in ship_list:
         if ship.contains(guess_coords):
-            print("Hit!")
+            print(f"{Colors.RED}Hit!\U0001f4a5{Colors.WHITE}")
             SHIP_HIT = True
             board_display[guess_coords['row']][guess_coords['col']] = 'X'
             if ship.destroyed():
-                print("You sunk a ship!")
+                print(f"{Colors.RED}You sunk a ship!\U0001f4a5\U0001f4a5\U0001f4a5{Colors.WHITE}")
                 ship_list.remove(ship)
             break
     if not SHIP_HIT:
         board_display[guess_coords['row']][guess_coords['col']] = '-'
-        print("You missed...")
+        print(f"{Colors.BLUE}You missed...\U0001f4a6{Colors.WHITE}")
 
     print_board(board_display)
 
