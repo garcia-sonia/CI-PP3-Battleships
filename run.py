@@ -22,7 +22,7 @@ print('*' * 60)
 print('')
 print("Welcome to:")
 print(
-    f"""{Colors.VIOLET}{Colors.BOLD}
+    f"""{Colors.VIOLET}, {Colors.BOLD}
      _______   _    _   _   _____   _______  __    __
     |__   __| | |  | | | | |  __ \ |__   __| \ \  / /
        | |    | |__| | | | | |__| |   | |     \ \/ /
@@ -333,8 +333,8 @@ for turn in range(NUM_TURNS):
 if ship_list:
     print(f"{Colors.YELLOW}Oh no...you have failed this time soldier {user_name}")
     print("")
-    print("""It looks like Chatarra's troups will steal our gold.
-You can always press on 'Run Program' to try again"""{Colors.WHITE}
+    print(f"""It looks like Chatarra's troups will steal our gold.
+You can always press on 'Run Program' to try again{Colors.WHITE}"""
 )    
 else:
     print(f"{Colors.GREEN}Mission accomplished {user_name} \N{Sports Medal}!")
