@@ -19,10 +19,8 @@ class Colors:
 
 # Welcome message
 print('*' * 60)
-print('')
-print("Welcome to:")
-print(
-    f"""{Colors.BLUE}{Colors.BOLD}
+
+print("Welcome to:"f"""{Colors.BLUE}{Colors.BOLD}
 ~~~~ _______   _    _   _   _____   _______  __    __      
 ~~~~|__   __| | |  | | | | |  __ \ |__   __| \ \  / /      S
        | |    | |__| | | | | |__| |   | |     \ \/ /       A
@@ -339,6 +337,5 @@ You can always press on 'Run Program' to try again{Colors.WHITE}"""
 )    
 else:
     print(f"{Colors.GREEN}Mission accomplished {user_name} \N{Sports Medal}!")
-    print("\U0001f396U000fe0f")
     print(f"""You sunk all of Chatarra's ships
 and you saved our gold!{Colors.WHITE}""")
