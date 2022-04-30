@@ -55,7 +55,7 @@ Do not run out of ammunition or Chatarra's troops will make it ashore.
 
 {Colors.GREEN}The fate of Oros harbour is in your hands...{Colors.WHITE}
 
-One more thing:
+{Colors.GREEN}One more thing:{Colors.WHITE}
 If a ship is hit, it will be marked as 'X'
 If it's a miss, it will be marked as '-'.
 """
@@ -276,7 +276,7 @@ while True:
         quit()
     elif answer.lower().strip() == "yes":
         os.system('clear')
-        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}{Colors.WHITE}\n")
+        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}. Now take a guess and get ready to fire!{Colors.WHITE}\n")
         break
     else:
         print("You must enter yes or no")
