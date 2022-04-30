@@ -1,7 +1,9 @@
 from random import randint
 import os
 
+
 class Colors:
+
     """
     This class defines basic color pallette used in the game.
     """
@@ -9,7 +11,7 @@ class Colors:
     VIOLET = '\033[95m'
     BLUE = '\033[94m'
     GREEN = '\033[92m'
-    YELLOW = '\033[93m'    
+    YELLOW = '\033[93m'
     WHITE = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
@@ -42,7 +44,7 @@ user_name = input("What is your name?\n")
 os.system('cls||clear')
 print(f"\n{Colors.GREEN}You look like a brave soldier {user_name}{Colors.WHITE}")
 
-USER_INSTRUCTIONS = f"""\nThis is your mission:
+USER_INSTRUCTIONS = f"""\n{Colors.UNDERLINE}This is your mission:{Colors.WHITE}
 You must defend Oros harbour from our enemy Chatarra.
 Oros is much coveted for the precious golden mineral covering our cliffs.
 Our watchmen have spotted the enemy's fleet fast approaching.
@@ -59,20 +61,6 @@ If it's a miss, it will be marked as '-'.
 """
 
 print(USER_INSTRUCTIONS)
-
-answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
-while True:
-    if answer.lower().strip() == "no":
-        os.system('cls||clear')
-        print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier :-/{Colors.WHITE}")
-        quit()
-    elif answer.lower().strip() == "yes":
-        os.system('clear')
-        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}{Colors.WHITE}\n")
-        print_board(board_display)
-    elif answer.lower().strip() != "yes" or "no":
-        print("You must enter yes or no")
-        answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
 
 
 class Ship:
@@ -276,8 +264,25 @@ while TEMP < NUM_SHIPS:
         TEMP += 1
 del TEMP
 
+
 # Play Game (including print number of ships left, print if hit
 # or miss and print if one ship is fully sunk)
+
+answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
+while True:
+    if answer.lower().strip() == "no":
+        os.system('cls||clear')
+        print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier :-/{Colors.WHITE}")
+        quit()
+    elif answer.lower().strip() == "yes":
+        os.system('clear')
+        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}{Colors.WHITE}\n")
+        break
+    else:
+        print("You must enter yes or no")
+        answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
+
+
 print_board(board_display)    
 for turn in range(NUM_TURNS):
     print(f"{Colors.BLUE}Turn:", turn + 1, "of", NUM_TURNS)
@@ -320,10 +325,6 @@ for turn in range(NUM_TURNS):
         break
 
 
-
-
-
-
 # End Game (including print if users wins when there are no more ships to sink
 # or print if user loses if ships are still left)
 if ship_list:
@@ -331,8 +332,7 @@ if ship_list:
     print("")
     print("""It looks like Chatarra's troups will steal our gold.
 You can always press on 'Run Program' to try again"""
-)
-          
+)    
 else:
     print(f"Mission accomplished {user_name}!")
     print("")
