@@ -55,7 +55,7 @@ Do not run out of ammunition or Chatarra's troops will make it ashore.
 
 {Colors.GREEN}The fate of Oros harbour is in your hands...{Colors.WHITE}
 
-{Colors.GREEN}One more thing:{Colors.WHITE}
+{Colors.UNDERLINE}One more thing:{Colors.WHITE}
 If a ship is hit, it will be marked as 'X'
 If it's a miss, it will be marked as '-'.
 """
