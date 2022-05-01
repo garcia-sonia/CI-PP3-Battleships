@@ -34,8 +34,7 @@ print("Welcome to:"f"""{Colors.BLUE}{Colors.BOLD}
      ___)   \  | |  | | | |__| |    | |   ___)   \         p
     \_______/  |_|  |_| |______|    |_|  \_______/~~~~     s
                                                   ~~~~     *
-{Colors.WHITE}"""
-)
+{Colors.WHITE}""")
 print('*' * 60)
 print('')
 
@@ -285,7 +284,7 @@ while True:
         answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
 
 
-print_board(board_display)   
+print_board(board_display)
 for turn in range(NUM_TURNS):
     print("*************")
     print(f"{Colors.GREEN}Turn:", turn + 1, "of", NUM_TURNS)
@@ -335,8 +334,7 @@ if ship_list:
     print(f"{Colors.YELLOW}Oh no...you have failed this time soldier {user_name}")
     print("")
     print(f"""It looks like Chatarra's troups will steal our gold...
-You can always press on 'Run Program' to try again{Colors.WHITE}"""
-)    
+You can always press on 'Run Program' to try again{Colors.WHITE}""")
 else:
     print(f"{Colors.GREEN}Mission accomplished {user_name} \N{Sports Medal}")
     print("")
