@@ -271,7 +271,9 @@ answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}
 while True:
     if answer.lower().strip() == "no":
         os.system('cls||clear')
-        print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier :-/{Colors.WHITE}")
+        print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier...")
+        print("")
+        print(f"You can still press on 'Run Program' if you are having second thoughts!{Colors.WHITE}")
         quit()
     elif answer.lower().strip() == "yes":
         os.system('clear')
