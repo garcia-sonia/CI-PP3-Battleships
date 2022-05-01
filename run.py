@@ -281,12 +281,14 @@ while True:
         quit()
     elif answer.lower().strip() == "yes":
         os.system('clear')
-        print(f"{Colors.GREEN}That is great news, thank you for your help soldier {user_name}.")
+        print(f"{Colors.GREEN}That is great news soldier {user_name}.")
+        print("")
         print(f"Now take a guess and get ready to fire!{Colors.WHITE}")
         break
     else:
         print("You must enter yes or no")
-        answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
+        answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no)\
+                       {Colors.WHITE}\n")
 
 
 print_board(board_display)
@@ -320,7 +322,8 @@ for turn in range(NUM_TURNS):
             SHIP_HIT = True
             board_display[guess_coords['row']][guess_coords['col']] = 'X'
             if ship.destroyed():
-                print(f"{Colors.RED}You sunk a ship!\U0001f4a5\U0001f4a5\U0001f4a5{Colors.WHITE}")
+                print(f"{Colors.RED}\
+You sunk a ship!\U0001f4a5\U0001f4a5\U0001f4a5{Colors.WHITE}")
                 ship_list.remove(ship)
             break
     if not SHIP_HIT:
@@ -336,7 +339,8 @@ for turn in range(NUM_TURNS):
 # End Game (including print if users wins when there are no more ships to sink
 # or print if user loses if ships are still left)
 if ship_list:
-    print(f"{Colors.YELLOW}Oh no...you have failed this time soldier {user_name}")
+    print(f"{Colors.YELLOW}\
+Oh no...you have failed this time soldier {user_name}")
     print("")
     print(f"""It looks like Chatarra's troups will steal our gold...
 You can always press on 'Run Program' to try again{Colors.WHITE}""")
