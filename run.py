@@ -334,10 +334,11 @@ for turn in range(NUM_TURNS):
 if ship_list:
     print(f"{Colors.YELLOW}Oh no...you have failed this time soldier {user_name}")
     print("")
-    print(f"""It looks like Chatarra's troups will steal our gold.
+    print(f"""It looks like Chatarra's troups will steal our gold...
 You can always press on 'Run Program' to try again{Colors.WHITE}"""
 )    
 else:
-    print(f"{Colors.GREEN}Mission accomplished {user_name} \N{Sports Medal}!")
+    print(f"{Colors.GREEN}Mission accomplished {user_name} \N{Sports Medal}")
+    print("")
     print(f"""You sunk all of Chatarra's ships
 and you saved our gold!{Colors.WHITE}""")
