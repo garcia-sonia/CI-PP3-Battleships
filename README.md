@@ -27,6 +27,14 @@ During the making of the game, I have particularly enjoyed using the Heroku plat
 - This feature adds a touch of color and front-end development to the Heroku app.
 - I chose a blue background svg image with a spiral pattern suitable for the maritime theme of the game.
 
+### Site favicon
+
+- I have added a Ship image favicon to the site in line with the naval theme of the game.
+
+![Screenshot of browswer tab showing favicon](docs/Capture-favicon.PNG)
+
+![Screenshot of enlarged favicon](docs/Capture_favicon-xl.PNG)
+
 ### The plot / instructions
 
 As explained in the game's instructions, Oros is much coveted for the precious golden mineral covering its cliffs. 
@@ -41,6 +49,38 @@ The instructions go on to explain the rules:
 - If it's a miss, it will be marked as '-'.
 
 ![Screenshot of plot and instructions](docs/Capture-instructions.PNG)
+
+### Accept / Decline the mission
+
+- The user will be given the choice to accept or decline the mission. 
+- The program will print one of the following to the console depending on the user's answer:
+
+User accepts the mission:
+
+![Screenshot of printout when user accepts the mission](docs/Capture-accept-mission-yes.PNG)
+
+User declines the mission:
+
+![Screenshot of printout when user declines the mission](docs/Capture-mission-no.PNG)
+
+User enters an invalid answer:
+
+![Screenshot of printout when user inputs a wrong choice](docs/Capture-accept-mission-invalid.PNG)
+
+### Game Board
+
+- As seen above, once the user accepts the mission, the program will print a message asking the user to take a guess and will print the game board.
+- The game board consists of a 7x7 grid as, after testing, this seems like a reasonable grid size to have a fair shot at sinking all the ships in thirty shots.
+- As also seen in the screenshot above, under the board will be printed the number of turns left and the number of ships left as well as the instruction "Get ready to fire" to prompt the user to keep guessing.
+
+### Enter a guess
+
+- Users are prompted to first enter a row guess and then a column guess.
+- If the row / column number are out of range, the program will print a message prompting users to enter a valid choice.
+
+![Screenshot of guess out of range](docs/Capture-wild-guess.PNG)
+
+### 
 
 ## Data Model
 
