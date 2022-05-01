@@ -40,7 +40,8 @@ print('')
 
 user_name = input("What is your name?\n")
 os.system('cls||clear')
-print(f"\n{Colors.GREEN}You look like a brave soldier {user_name}{Colors.WHITE}")
+print(f"\n{Colors.GREEN}You look like a brave soldier {user_name}\
+      {Colors.WHITE}")
 
 USER_INSTRUCTIONS = f"""\n{Colors.UNDERLINE}This is your mission:{Colors.WHITE}
 You must defend Oros harbour from our enemy Chatarra.
@@ -266,13 +267,17 @@ del TEMP
 # Play Game (including print number of ships left, print if hit
 # or miss and print if one ship is fully sunk)
 
-answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no){Colors.WHITE}\n")
+answer = input(f"{Colors.GREEN}Do you accept the mission? (yes/no)\
+               {Colors.WHITE}\n")
 while True:
     if answer.lower().strip() == "no":
         os.system('cls||clear')
-        print(f"{Colors.YELLOW}Too bad {user_name}, we could have done with a brave soldier...")
+        print(f"{Colors.YELLOW}Too bad {user_name}...")
+        print("Oros could have done with a brave soldier...")
         print("")
-        print(f"You can still press on 'Run Program' if you are having second thoughts!{Colors.WHITE}")
+        print(f"Press on 'Run Program' if you are having second thoughts!\
+              {Colors.WHITE}")
+        print("")
         quit()
     elif answer.lower().strip() == "yes":
         os.system('clear')
