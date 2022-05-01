@@ -1,8 +1,46 @@
 # Thirty Shots Battlehips
 
-## How to play
+This game constitues my third Project Portfolio with [Code Institute](https://github.com/Code-Institute-Org). 
+The project runs in a CLI, is deployed via [Heroku](https://www.heroku.com/), and uses Python.
+
+Thirty Shots Battleships is a single player version of the popular game Battleships where the user is recruited to sink the foreign fleet of "Chatarra" preventing them for making it ashore to the fictional town of "Oros".
+
+During the making of the game, I have particularly enjoyed using the Heroku platform as a service (PaaS). Heroku has enabled me to build, run, and operate this application entirely in the cloud.
+
+[The live project can be found here](https://thirty-shots-battleships.herokuapp.com/)
+
+![Screenshot of Heroku app on PC and laptop screens](docs/Capture-pc-laptop.PNG)
 
 ## Features
+
+### The title
+
+- I developped a simple ASCII drawing for the title which basically consists of the "Thirty Shots" title itself in big letters.
+- I added the word "battleships" to the right of the ASCII art in normal console letters. 
+- I added a touch of blue colour by using ANSI codes.
+
+![Screenshot of ASCII drawing title](docs/Capture-title.PNG)
+
+### The Background
+
+- As seen in the screenshot above I added a background around the actual app by modifying the layout.hml page provided by Code Institute for the project.
+- This feature adds a touch of color and front-end development to the Heroku app.
+- I chose a blue background svg image with a spiral pattern suitable for the maritime theme of the game.
+
+### The plot / instructions
+
+As explained in the game's instructions, Oros is much coveted for the precious golden mineral covering its cliffs. 
+Oro's watchmen have spotted Chatarra's fleet fast approaching.
+The user will have to destroy the ennemy's 4 ships before they land.
+If the user does not succeed, the ennemy will steal Oro's gold.
+Users only have 30 cannonballs to complete their mission, hence the title of the game "Thirty Shots Battleships".
+If users runs out of ammunition then Chatarra's troops will make it ashore.
+
+The instructions go on to explain the rules:
+- If a ship is hit, it will be marked as 'X'
+- If it's a miss, it will be marked as '-'.
+
+![Screenshot of plot and instructions](docs/Capture-instructions.PNG)
 
 ## Data Model
 
