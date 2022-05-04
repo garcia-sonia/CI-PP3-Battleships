@@ -55,17 +55,17 @@ The instructions go on to explain the rules:
 - The user will be given the choice to accept or decline the mission. 
 - The program will print one of the following to the console depending on the user's answer:
 
-User accepts the mission:
+User enters an invalid answer:
 
-![Screenshot of printout when user accepts the mission](docs/Capture-accept-mission-yes.PNG)
+![Screenshot of printout when user inputs a wrong choice](docs/Capture-accept-mission-invalid.PNG)
 
 User declines the mission:
 
 ![Screenshot of printout when user declines the mission](docs/Capture-mission-no.PNG)
 
-User enters an invalid answer:
+User accepts the mission:
 
-![Screenshot of printout when user inputs a wrong choice](docs/Capture-accept-mission-invalid.PNG)
+![Screenshot of printout when user accepts the mission](docs/Capture-accept-mission-yes.PNG)
 
 ### Game Board
 
@@ -80,7 +80,17 @@ User enters an invalid answer:
 
 ![Screenshot of guess out of range](docs/Capture-wild-guess.PNG)
 
-### 
+### Miss / Hit! / You sunk a ship!
+
+- If a ship is hit it will be marked as 'X' on the grid and the console will print "Hit!&#128165;" in red font.
+- If a ship is sunk the console will also print "You sunk a ship!&#128165;&#128165;&#128165;" in red font.
+- If the user misses il will be marked as '-' on the grid and the console will print "You missed...&#58161;"
+
+![Capture showing a hit](docs/Capture-hit.PNG)
+![Capture showing a sunk ship](docs/Capture-sunk3.PNG)
+![Cpature showing a missed shot](docs/Capture-you-missed.PNG)
+
+
 
 ## Data Model
 
