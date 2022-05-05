@@ -111,19 +111,14 @@ The functionality of the game relies mainly on the class 'Ship'. This class will
 
 ## Testing
 
-- [PEP8 online check](http://pep8online.com/) was used to validate the Python code. No errors remain at the time of this submission.
-![Screenshot of the PEP8 validation results](docs/Capture-PEP8.PNG)
-
-- [W3 validator](https://validator.w3.org/) was used to validate the layout.html page. No errors remain at the time of this submission.
-
 ### Solved bugs
 
-- A security issue with the Heroku app prevented any automatic deployments. The deployment had to be made from gitpod signing first into heroku and then pushing to heroku with the following commands:
+1. A security issue with the Heroku app prevented any automatic deployments. The deployment had to be made from gitpod signing first into heroku and then pushing to heroku with the following commands:
     - heroku login -i (to login)
     - heroku git:remote -a thirty-shots-battleships (to select the correct app on heroku)
     - git push herouk main (to push to heroku from gitpod)
 
-- Code indentation issues and long lines of code were flagged on the PEP8 online validator and corrected accordingly.
+2. Code indentation issues and long lines of code were flagged on the PEP8 online validator and corrected accordingly.
 
 - 'Get ready to fire' appearing even after user sinks all ships. This issue was solved by replacing the location of the print line "Get ready to fire!" from directly under the definition of the function to later in the code (line 299) as part of the section appearing under the board which also displays number of turns and ships left. Following this logic once there are no more ships to sink the game will end and the "Get ready to fire!" phrase will not be printed anymore.
 
@@ -135,16 +130,25 @@ After the change:
 
 ![Screenshot showing the 'Get ready to fire!' print location after fixing the bug](docs/fire_after.PNG)
 
-- Issue with placement of input question prompting user to answer if mission is accepted
+3. Issue with placement of input question prompting user to answer if mission is accepted. I faced an issue when building the while loop incorporating the three options: yes, no, or invalid input.
+    - answer == 'no' This answer worked as expected (When the user answered no the game displayed the printout "Too bad {user_name}... Oros could have done with a brave soldier...")
+    - answer == 'yes' This answer worked to accept the mission and print the board but so did any other answer (eg. maybe, not sure, blablabla, etc.) so I needed to include a third option to check for invalid input.
+    - else answer: I incorporated a third entry to the while loop checking for invalid input but program did not behave as expected. The program first printed "You must enter yes or no" but at the second attempt of invalid input the program went on to prompting the user to enter a row guess even if the user had still entered an invalid input. On a second attempt to fix the problem I placed the accept mission input option directly under the instructions section and tried to recode in the following way (which ended up in a continuos loop)
 
-- Background issue
+![Screenshot of old version for accept mission feature](docs/accept_mission_bug.PNG)
 
+    - Finally, I came up with a solution and replaced the accept mission feature in the 'play game' section (line 267) like this:
 
+![Screenshot of final version for accept mission feature](docs/accept_mission_bug_sol.PNG)
 
+4. Background issue
 
+### Validators
 
-### Remaining bugs
-### Validator testing
+- [PEP8 online check](http://pep8online.com/) was used to validate the Python code. No errors remain at the time of this submission.
+![Screenshot of the PEP8 validation results](docs/Capture-PEP8.PNG)
+
+- [W3 validator](https://validator.w3.org/) was used to validate the layout.html page. No errors remain at the time of this submission.
 
 ## Deployment
 This project was developed by forking a specialized [Code Institute template](https://github.com/Code-Institute-Org/python-essentials-template) which simulates a terminal in the web browser.
