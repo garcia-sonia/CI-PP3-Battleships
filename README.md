@@ -100,13 +100,29 @@ User accepts the mission:
 
 ![Capture showing a loser printout](docs/Capture-you-lose.PNG)
 
-## Data Model
+### Features left to implement
+- Leave a space between ships so that no ships are immediately juxtaposed on the grid.
+
+## Python Logic
+
+## Data model
+
+The functionality of the game relies mainly on the class 'Ship'. This class will create the board, randomize the ship coordinates, place the ships and display the board to the user.
 
 ## Testing
 
-## Testing
+- [PEP8 online check](http://pep8online.com/) was used to validate the Python code. No errors remain at the time of this submission.
+![Screenshot of the PEP8 validation results](docs/Capture-PEP8.PNG)
+
+- [W3 validator](https://validator.w3.org/) was used to validate the layout.html page. No errors remain at the time of this submission.
+
 ### Solved bugs
-Security issue with Heroku app.
+
+- A security issue with the Heroku app prevented any automatic deployments. The deployment had to be made from gitpod signing first into heroku and then pushing to heroku with the following commands:
+
+
+
+
 ### Remaining bugs
 ### Validator testing
 
@@ -146,12 +162,13 @@ Select your preferred deployment type:
 - Code Institute's Battleships LMS tutorial
 - [Code credit on Ship class goes to Cloud2236863496](https://discuss.codecademy.com/u/cloud2236863496/summary)
 - Peer Code Review: I have looked at other CI students code for inspiration like [David Bowers](https://github.com/dnlbowers/battleships/blob/main/views/layout.html) layout.html code for inserting a background image, and [Lukaszkukla](https://github.com/lukaszkukla/hangman-x/blob/main/src/colors.py) code for including a range of colors in the text displayed in the console.
-- [Background clipart image of cliffs](https://www.clipsafari.com/clips/o313445-sea-cliffs)
+- [Background svg image](https://www.svgbackgrounds.com/)
 - [Favicon image of ship](https://upload.wikimedia.org/wikipedia/commons/9/95/P_ship_grey.svg)
-- [Clear console function copied from delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
+- [Clear console function from delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
 - [Code Institute for providing the template with a mock terminal to display my game via a webpage](https://github.com/Code-Institute-Org/python-essentials-template)
 
 
 ## Tools used
 - [Heroku app](https://www.heroku.com/)
 - [PEP8 online validator](http://pep8online.com/)
+
