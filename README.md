@@ -80,17 +80,25 @@ User accepts the mission:
 
 ![Screenshot of guess out of range](docs/Capture-wild-guess.PNG)
 
-### Miss / Hit! / You sunk a ship!
+### Miss... / Hit! / You sunk a ship!
 
 - If a ship is hit it will be marked as 'X' on the grid and the console will print "Hit!&#128165;" in red font.
 - If a ship is sunk the console will also print "You sunk a ship!&#128165;&#128165;&#128165;" in red font.
-- If the user misses il will be marked as '-' on the grid and the console will print "You missed...&#58161;"
+- If the user misses il will be marked as '-' on the grid and the console will print "You missed... 💦 in blue"
 
 ![Capture showing a hit](docs/Capture-hit.PNG)
 ![Capture showing a sunk ship](docs/Capture-sunk3.PNG)
 ![Cpature showing a missed shot](docs/Capture-you-missed.PNG)
 
+### Lose / Win printout
 
+- If the user manages to sink the 4 ships in thirty shots, the console will print the following:
+
+![Capture showing a winner printout](docs/Capture-mission-accomplished2.PNG)
+
+- If the user does not manage to sink the 4 ships in thirty shots, the console will print the  following:
+
+![Capture showing a loser printout](docs/Capture-you-lose.PNG)
 
 ## Data Model
 
