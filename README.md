@@ -103,8 +103,6 @@ User accepts the mission:
 ### Features left to implement
 - Leave a space between ships so that no ships are immediately juxtaposed on the grid.
 
-## Python Logic
-
 ## Data model
 
 The functionality of the game relies mainly on the class 'Ship'. This class will create the board, randomize the ship coordinates, place the ships and display the board to the user.
@@ -120,7 +118,7 @@ The functionality of the game relies mainly on the class 'Ship'. This class will
 
 2. Code indentation issues and long lines of code were flagged on the PEP8 online validator and corrected accordingly.
 
-- 'Get ready to fire' appearing even after user sinks all ships. This issue was solved by replacing the location of the print line "Get ready to fire!" from directly under the definition of the function to later in the code (line 299) as part of the section appearing under the board which also displays number of turns and ships left. Following this logic once there are no more ships to sink the game will end and the "Get ready to fire!" phrase will not be printed anymore.
+3. 'Get ready to fire' appearing even after user sinks all ships. This issue was solved by replacing the location of the print line "Get ready to fire!" from directly under the definition of the function to later in the code (line 299) as part of the section appearing under the board which also displays number of turns and ships left. Following this logic once there are no more ships to sink the game will end and the "Get ready to fire!" phrase will not be printed anymore.
 
 Before the change:
 
@@ -130,7 +128,7 @@ After the change:
 
 ![Screenshot showing the 'Get ready to fire!' print location after fixing the bug](docs/fire_after.PNG)
 
-3. Issue with placement of input question prompting user to answer if mission is accepted. I faced an issue when building the while loop incorporating the three options: yes, no, or invalid input.
+4. Issue with placement of input question prompting user to answer if mission is accepted. I faced an issue when building the while loop incorporating the three options: yes, no, or invalid input.
     - answer == 'no' This answer worked as expected (When the user answered no the game displayed the printout "Too bad {user_name}... Oros could have done with a brave soldier...")
     - answer == 'yes' This answer worked to accept the mission and print the board but so did any other answer (e.g. maybe, not sure, blablabla, etc.) so I needed to include a third option to check for invalid input.
     - else answer: I incorporated a third entry to the while loop checking for invalid input but program did not behave as expected. The program first printed "You must enter yes or no" but at the second attempt of invalid input the program went on to prompting the user to enter a row guess even if the user had still entered an invalid input. On a second attempt to fix the problem I placed the accept mission input option directly under the instructions section and tried to recode in the following way (which ended up in a continuous loop)
@@ -141,7 +139,7 @@ After the change:
 
 ![Screenshot of final version for accept mission feature](docs/accept_mission_bug_sol.PNG)
 
-4. Background issue. I wanted to include a background around the black console to make the game a bit more interesting. I first chose a Clipart svg image showing sea cliffs (still stored in the docs file of this project). However, after many attempts of resizing the image I was not able to make this image work as it did not scale up well. This process was very time consuming and I finally dropped this Clipart image in favour of a free svg background from [svgbackgrounds.com](https://www.svgbackgrounds.com).
+5. Background issue. I wanted to include a background around the black console to make the game a bit more interesting. I first chose a Clipart svg image showing sea cliffs (still stored in the docs file of this project). However, after many attempts of resizing the image I was not able to make this image work as it did not scale up well. This process was very time consuming and I finally dropped this Clipart image in favour of a free svg background from [svgbackgrounds.com](https://www.svgbackgrounds.com).
 
 ### Validators
 
