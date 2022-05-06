@@ -1,6 +1,6 @@
-# Thirty Shots Battlehips
+# Thirty Shots Battleships
 
-This game constitues my third Project Portfolio with [Code Institute](https://github.com/Code-Institute-Org). 
+This game constitutes my third Project Portfolio with [Code Institute](https://github.com/Code-Institute-Org). 
 The project runs in a CLI, is deployed via [Heroku](https://www.heroku.com/), and uses Python.
 
 Thirty Shots Battleships is a single player version of the popular game Battleships where the user is recruited to sink the foreign fleet of "Chatarra" preventing them for making it ashore to the fictional town of "Oros".
@@ -15,7 +15,7 @@ During the making of the game, I have particularly enjoyed using the Heroku plat
 
 ### The title
 
-- I developped a simple ASCII drawing for the title which basically consists of the "Thirty Shots" title itself in big letters.
+- I developed a simple ASCII drawing for the title which basically consists of the "Thirty Shots" title itself in big letters.
 - I added the word "battleships" to the right of the ASCII art in normal console letters. 
 - I added a touch of blue colour by using ANSI codes.
 
@@ -24,14 +24,14 @@ During the making of the game, I have particularly enjoyed using the Heroku plat
 ### The Background
 
 - As seen in the screenshot above I added a background around the actual app by modifying the layout.hml page provided by Code Institute for the project.
-- This feature adds a touch of color and front-end development to the Heroku app.
+- This feature adds a touch of colour and front-end development to the Heroku app.
 - I chose a blue background svg image with a spiral pattern suitable for the maritime theme of the game.
 
 ### Site favicon
 
 - I have added a Ship image favicon to the site in line with the naval theme of the game.
 
-![Screenshot of browswer tab showing favicon](docs/Capture-favicon.PNG)
+![Screenshot of browser tab showing favicon](docs/Capture-favicon.PNG)
 
 ![Screenshot of enlarged favicon](docs/Capture_favicon-xl.PNG)
 
@@ -39,10 +39,10 @@ During the making of the game, I have particularly enjoyed using the Heroku plat
 
 As explained in the game's instructions, Oros is much coveted for the precious golden mineral covering its cliffs. 
 Oro's watchmen have spotted Chatarra's fleet fast approaching.
-The user will have to destroy the ennemy's 4 ships before they land.
-If the user does not succeed, the ennemy will steal Oro's gold.
+The user will have to destroy the enemy's 4 ships before they land.
+If the user fails, the enemy will steal Oro's gold.
 Users only have 30 cannonballs to complete their mission, hence the title of the game "Thirty Shots Battleships".
-If users runs out of ammunition then Chatarra's troops will make it ashore.
+If users run out of ammunition then Chatarra's troops will make it ashore.
 
 The instructions go on to explain the rules:
 - If a ship is hit, it will be marked as 'X'
@@ -88,7 +88,7 @@ User accepts the mission:
 
 ![Capture showing a hit](docs/Capture-hit.PNG)
 ![Capture showing a sunk ship](docs/Capture-sunk3.PNG)
-![Cpature showing a missed shot](docs/Capture-you-missed.PNG)
+![Capture showing a missed shot](docs/Capture-you-missed.PNG)
 
 ### Lose / Win printout
 
@@ -96,7 +96,7 @@ User accepts the mission:
 
 ![Capture showing a winner printout](docs/Capture-mission-accomplished2.PNG)
 
-- If the user does not manage to sink the 4 ships in thirty shots, the console will print the  following:
+- If the user does not manage to sink the 4 ships in thirty shots, the console will print the following:
 
 ![Capture showing a loser printout](docs/Capture-you-lose.PNG)
 
@@ -132,8 +132,8 @@ After the change:
 
 3. Issue with placement of input question prompting user to answer if mission is accepted. I faced an issue when building the while loop incorporating the three options: yes, no, or invalid input.
     - answer == 'no' This answer worked as expected (When the user answered no the game displayed the printout "Too bad {user_name}... Oros could have done with a brave soldier...")
-    - answer == 'yes' This answer worked to accept the mission and print the board but so did any other answer (eg. maybe, not sure, blablabla, etc.) so I needed to include a third option to check for invalid input.
-    - else answer: I incorporated a third entry to the while loop checking for invalid input but program did not behave as expected. The program first printed "You must enter yes or no" but at the second attempt of invalid input the program went on to prompting the user to enter a row guess even if the user had still entered an invalid input. On a second attempt to fix the problem I placed the accept mission input option directly under the instructions section and tried to recode in the following way (which ended up in a continuos loop)
+    - answer == 'yes' This answer worked to accept the mission and print the board but so did any other answer (e.g. maybe, not sure, blablabla, etc.) so I needed to include a third option to check for invalid input.
+    - else answer: I incorporated a third entry to the while loop checking for invalid input but program did not behave as expected. The program first printed "You must enter yes or no" but at the second attempt of invalid input the program went on to prompting the user to enter a row guess even if the user had still entered an invalid input. On a second attempt to fix the problem I placed the accept mission input option directly under the instructions section and tried to recode in the following way (which ended up in a continuous loop)
 
 ![Screenshot of old version for accept mission feature](docs/accept_mission_bug.PNG)
 
@@ -141,7 +141,7 @@ After the change:
 
 ![Screenshot of final version for accept mission feature](docs/accept_mission_bug_sol.PNG)
 
-4. Background issue
+4. Background issue. I wanted to include a background around the black console to make the game a bit more interesting. I first chose a Clipart svg image showing sea cliffs (still stored in the docs file of this project). However, after many attempts of resizing the image I was not able to make this image work as it did not scale up well. This process was very time consuming and I finally dropped this Clipart image in favour of a free svg background from [svgbackgrounds.com](https://www.svgbackgrounds.com).
 
 ### Validators
 
@@ -170,7 +170,7 @@ The project was deployed to Heroku using the below procedure:
 12. Type and select 'Python' and click 'save changes' button
 13. Repeat same to add 'node.js' pack
  
-IMPORTANT The buildpacks must be in this particular order. If they are not, then click and drag to change it
+IMPORTANT The buildpacks must be in this particular order. If they are not, then click and drag to change it.
  
 Select Github as the deployment method from the deploy tab
 Connect to Github to confirm
@@ -178,21 +178,19 @@ Type repository name and click search button
 Click connect button that appeared next to your repository name
 Select your preferred deployment type:
 'Enable Automatic Deploys' for automatic deployments when you push updates to Github - NOT RECOMMENDED if you have a free account
-'Deploy Branch' for manual deployments - RECOMMENDED for free account users
-
-
 
 ## Credits
 - Code Institute's Battleships LMS tutorial
 - [Code credit on Ship class goes to Cloud2236863496](https://discuss.codecademy.com/u/cloud2236863496/summary)
-- Peer Code Review: I have looked at other CI students code for inspiration like [David Bowers](https://github.com/dnlbowers/battleships/blob/main/views/layout.html) layout.html code for inserting a background image, and [Lukaszkukla](https://github.com/lukaszkukla/hangman-x/blob/main/src/colors.py) code for including a range of colors in the text displayed in the console.
+- Peer Code Review: I have looked at other CI students code for inspiration like [David Bowers](https://github.com/dnlbowers/battleships/blob/main/views/layout.html) layout.html code for inserting a background image, and [Lukaszkukla](https://github.com/lukaszkukla/hangman-x/blob/main/src/colors.py) code for including a range of colours in the text displayed in the console.
 - [Background svg image](https://www.svgbackgrounds.com/)
 - [Favicon image of ship](https://upload.wikimedia.org/wikipedia/commons/9/95/P_ship_grey.svg)
 - [Clear console function from delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
 - [Code Institute for providing the template with a mock terminal to display my game via a webpage](https://github.com/Code-Institute-Org/python-essentials-template)
-
+- As always, I would like to thank the Community @ [Code Institute](https://github.com/Code-Institute-Org) for the warm welcome and for all the help, advice and support during this Python project and in general.
 
 ## Tools used
 - [Heroku app](https://www.heroku.com/)
 - [PEP8 online validator](http://pep8online.com/)
+- [W3C Markup validation service](https://validator.w3.org/)
 
